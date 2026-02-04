@@ -13,6 +13,7 @@ import SocialLinks from '../components/SocialLinks';
 import RivalSection from '../components/RivalSection';
 import SEO from '../components/SEO';
 import AdsCard from '../components/AdsCard';
+import BookSection from '../components/BookSection';
 
 
 function PoliticianDetail() {
@@ -124,6 +125,13 @@ function PoliticianDetail() {
             </div>
 
             <AdsCard slot="detail-middle" />
+
+            {politician.books && politician.books.length > 0 && (
+                <div className="card">
+                    <h2 className="section-title">📚 この政治家の著書</h2>
+                    <BookSection books={politician.books} />
+                </div>
+            )}
 
             {politician.socialLinks && politician.socialLinks.length > 0 && (
                 <div className="card">

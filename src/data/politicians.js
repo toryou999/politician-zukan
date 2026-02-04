@@ -28,6 +28,9 @@ export const politicians = [
             { year: '1993年', title: '衆議院議員 初当選' },
             { year: '1961年', title: '奈良県奈良市 生まれ' },
         ],
+        books: [
+            { title: '美しく、強く、成長する国へ。ー私の「日本経済強靱化計画」ー', asin: 'B08D97746P' },
+        ],
     },
     {
         id: 'ishiba-shigeru',
@@ -53,6 +56,11 @@ export const politicians = [
             { year: '2007年', title: '防衛大臣' },
             { year: '1986年', title: '衆議院議員 初当選（全国最年少）' },
             { year: '1957年', title: '鳥取県八頭郡 生まれ' },
+        ],
+        books: [
+            { title: '国防', asin: 'B00I8R4I12' },
+            { title: '国難: 政治に幻想はいらない', asin: 'B07D2GP1Z1' },
+            { title: '政策至上主義', asin: 'B00E190W6S' },
         ],
     },
     {
@@ -103,6 +111,9 @@ export const politicians = [
             { year: '2017年', title: '外務大臣' },
             { year: '1996年', title: '衆議院議員 初当選' },
             { year: '1963年', title: '神奈川県平塚市 生まれ' },
+        ],
+        books: [
+            { title: '河野太郎の国会攻略本', asin: '4901234375' },
         ],
     },
     {
@@ -4685,6 +4696,10 @@ export const politicians = [
             { year: '2015〜2019年', title: '大阪市長' },
             { year: '2011年', title: '大阪市議会議員' },
             { year: '1975年', title: '大阪府河内長野市 生まれ' },
+        ],
+        books: [
+            { title: '大阪から日本は変わる', asin: 'B08GJJW51W' },
+            { title: '[図解]大阪維新~チーム橋下の戦略と作戦~', asin: 'B008T5631O' },
         ],
     },
     {
