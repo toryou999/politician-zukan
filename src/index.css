@@ -1153,10 +1153,15 @@ ol {
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  /* centerから変更して位置を固定 */
   justify-content: center;
   z-index: 2000;
   padding: 20px;
+  padding-top: 80px;
+  /* 上部に余白を持たせる */
+  overflow-y: auto;
+  /* モーダルが長い場合の保険 */
 }
 
 .position-select-modal {

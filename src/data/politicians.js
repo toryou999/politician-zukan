@@ -3157,25 +3157,7 @@ export const politicians = [
             { year: '2024年10月', title: '衆議院議員 初当選（1期）' },
         ],
     },
-    {
-        id: 'yamazoe-taku',
-        name: '山添 拓',
-        nameKana: 'やまぞえ たく',
-        party: '中道改革連合',
-        partyType: 'opposition',
-        chamber: '衆議院',
-        constituency: '東京15区',
-        wikimediaFile: '山添拓、参議院選挙、渋谷駅前.jpg',
-        socialLinks: [],
-        position: { x: -0.4, y: 0.4 },
-        supportBills: ['労働政策'],
-        opposeBills: [],
-        rivals: [],
-        careers: [
-            { year: '2026年1月', title: '立憲民主党を離党、中道改革連合に入党' },
-            { year: '2024年10月', title: '衆議院議員 初当選（1期）' },
-        ],
-    },
+
     {
         id: 'yamagishi-junko',
         name: '山岸 一生',

@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useCabinet } from '../contexts/CabinetContext';
 import { cabinetPositions, getPositionsByRow, getPositionById } from '../data/cabinetPositions';
@@ -11,6 +11,14 @@ import SEO from '../components/SEO';
 function PoliticianSelectModal({ position, onClose, onSelect }) {
     const [searchQuery, setSearchQuery] = useState('');
     const [photoUrls, setPhotoUrls] = useState({});
+    const inputRef = useRef(null);
+
+    // マウント時にフォーカス
+    useEffect(() => {
+        if (inputRef.current) {
+            inputRef.current.focus();
+        }
+    }, []);
 
     const filteredPoliticians = useMemo(() => {
         if (!searchQuery.trim()) {
@@ -50,11 +58,11 @@ function PoliticianSelectModal({ position, onClose, onSelect }) {
 
                 <div className="modal-search">
                     <input
+                        ref={inputRef}
                         type="text"
                         placeholder="名前・政党で検索..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
-                        autoFocus
                     />
                 </div>
 
