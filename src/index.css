@@ -1822,3 +1822,213 @@ ol {
   font-weight: 400;
   opacity: 0.8;
 }
+
+/* ===== フッター ===== */
+.site-footer {
+  margin-top: auto;
+  padding: 40px 16px 80px;
+  /* FABと被らないように下部余白多め */
+  background-color: #f8f9fa;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.footer-content {
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.footer-links {
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  color: var(--color-text);
+}
+
+.footer-links .separator {
+  margin: 0 10px;
+  color: var(--color-border);
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+/* ===== 規約ページ ===== */
+.last-updated {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 30px;
+  text-align: right;
+}
+
+.terms-section {
+  margin-bottom: 40px;
+}
+
+.terms-section h2 {
+  font-size: 1.25rem;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.terms-section p {
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+.terms-section ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.terms-section li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.terms-footer {
+  margin-top: 60px;
+  text-align: center;
+}
+
+/* ===== 広告枠 ===== */
+.ads-card-container {
+  margin-bottom: 24px;
+}
+
+.ads-placeholder {
+  background-color: #fafafa;
+  border: 1px dashed #ddd;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.ads-label {
+  display: block;
+  font-size: 0.6rem;
+  color: #aaa;
+  margin-bottom: 4px;
+}
+
+.ads-mock {
+  padding: 20px 0;
+  color: #ccc;
+  font-weight: bold;
+}
+
+/* ===== フッター ===== */
+.site-footer {
+  margin-top: auto;
+  padding: 40px 16px 80px;
+  /* FABと被らないように下部余白多め */
+  background-color: #f8f9fa;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.footer-content {
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.footer-links {
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  color: var(--color-text);
+}
+
+.footer-links .separator {
+  margin: 0 10px;
+  color: var(--color-border);
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+/* ===== 規約ページ ===== */
+.last-updated {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 30px;
+  text-align: right;
+}
+
+.terms-section {
+  margin-bottom: 40px;
+}
+
+.terms-section h2 {
+  font-size: 1.25rem;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.terms-section p {
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+.terms-section ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.terms-section li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.terms-footer {
+  margin-top: 60px;
+  text-align: center;
+}
+
+/* ===== 広告枠 ===== */
+.ads-card-container {
+  margin-bottom: 24px;
+}
+
+.ads-placeholder {
+  background-color: #fafafa;
+  border: 1px dashed #ddd;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.ads-label {
+  display: block;
+  font-size: 0.6rem;
+  color: #aaa;
+  margin-bottom: 4px;
+}
+
+.ads-mock {
+  padding: 20px 0;
+  color: #ccc;
+  font-weight: bold;
+}

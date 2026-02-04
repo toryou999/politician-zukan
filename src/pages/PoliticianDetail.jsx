@@ -12,6 +12,7 @@ import CareerSection from '../components/CareerSection';
 import SocialLinks from '../components/SocialLinks';
 import RivalSection from '../components/RivalSection';
 import SEO from '../components/SEO';
+import AdsCard from '../components/AdsCard';
 
 
 function PoliticianDetail() {
@@ -103,7 +104,6 @@ function PoliticianDetail() {
                 </div>
             </div>
 
-            {/* マイベスト内閣に追加ボタン */}
             <div className="card cabinet-add-card">
                 <button className="detail-add-cabinet-btn" onClick={handleAddToCabinet}>
                     {currentPosition ? (
@@ -122,6 +122,8 @@ function PoliticianDetail() {
                     )}
                 </button>
             </div>
+
+            <AdsCard slot="detail-middle" />
 
             {politician.socialLinks && politician.socialLinks.length > 0 && (
                 <div className="card">

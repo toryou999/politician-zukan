@@ -8,6 +8,9 @@ import MyCabinet from './pages/MyCabinet'
 import ScrollToTop from './components/ScrollToTop'
 import CabinetFab from './components/CabinetFab'
 import PositionSelectModal from './components/PositionSelectModal'
+import Terms from './pages/Terms'
+import Privacy from './pages/Privacy'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -19,9 +22,12 @@ function App() {
           <Route path="/party/:partyId" element={<PartyMemberList />} />
           <Route path="/politician/:id" element={<PoliticianDetail />} />
           <Route path="/my-cabinet" element={<MyCabinet />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
         </Routes>
         <CabinetFab />
         <PositionSelectModal />
+        <Footer />
       </CabinetProvider>
     </BrowserRouter>
   )
