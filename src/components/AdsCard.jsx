@@ -4,30 +4,26 @@ function AdsCard({ slot, style = {} }) {
     // 将来的にはここでAdSenseのスクリプトをロードしたり、
     // slot IDを受け取って特定の広告を表示したりします。
 
-    // 現在はプレースホルダーを表示
+    // まだ広告配信前なので、プレースホルダーは表示しない
+    // 将来的にAdSenseコードを入れる際は、ここを復活させる
+    return null;
+
+    /*
     return (
         <div className="card ads-card-container" style={style}>
             <div className="ads-placeholder">
                 <span className="ads-label">スポンサードリンク</span>
                 <div className="ads-content">
-                    {/* ここにGoogle AdSenseのコードが入ります */}
-                    {/* 
-                    <ins className="adsbygoogle"
-                         style={{ display: 'block' }}
-                         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-                         data-ad-slot={slot}
-                         data-ad-format="auto"
-                         data-full-width-responsive="true"></ins>
-                    */}
                     <div className="ads-mock">
                         広告スペース
-                        <br />
+                        <br/>
                         <small>（ここに広告が表示されます）</small>
                     </div>
                 </div>
             </div>
         </div>
     );
+    */
 }
 
 export default AdsCard;
