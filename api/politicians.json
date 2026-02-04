@@ -1,0 +1,1202 @@
+{
+  "takaichi-sanae": {
+    "name": "高市 早苗",
+    "party": "自由民主党",
+    "wikimediaFile": "Sanae Takaichi 20251021.jpg"
+  },
+  "ishiba-shigeru": {
+    "name": "石破 茂",
+    "party": "自由民主党",
+    "wikimediaFile": "Ishiba Shigeru 20241001.jpg"
+  },
+  "koizumi-shinjiro": {
+    "name": "小泉 進次郎",
+    "party": "自由民主党",
+    "wikimediaFile": "Shinjirō Koizumi 20240607.jpg"
+  },
+  "kono-taro": {
+    "name": "河野 太郎",
+    "party": "自由民主党",
+    "wikimediaFile": "Tarō Kōno 2022-08-15.jpg"
+  },
+  "aso-taro": {
+    "name": "麻生 太郎",
+    "party": "自由民主党",
+    "wikimediaFile": "Aso taro 20160622.jpg"
+  },
+  "suga-yoshihide": {
+    "name": "菅 義偉",
+    "party": "自由民主党",
+    "wikimediaFile": "Yoshihide Suga 20210723 1.jpg"
+  },
+  "hayashi-yoshimasa": {
+    "name": "林 芳正",
+    "party": "自由民主党",
+    "wikimediaFile": "Yoshimasa Hayashi (cropped).jpg"
+  },
+  "motegi-toshimitsu": {
+    "name": "茂木 敏充",
+    "party": "自由民主党",
+    "wikimediaFile": "Official portrait of Toshimitsu Motegi 2024 (cropped).jpg"
+  },
+  "kishida-fumio": {
+    "name": "岸田 文雄",
+    "party": "自由民主党",
+    "wikimediaFile": "Fumio Kishida 20211005.jpg"
+  },
+  "kamikawa-yoko": {
+    "name": "上川 陽子",
+    "party": "自由民主党",
+    "wikimediaFile": "Yoko Kamikawa 20240716 (cropped).jpg"
+  },
+  "kobayashi-takayuki": {
+    "name": "小林 鷹之",
+    "party": "自由民主党",
+    "wikimediaFile": "Takayuki Kobayashi 20171218 (cropped).jpg"
+  },
+  "obuchi-yuko": {
+    "name": "小渕 優子",
+    "party": "自由民主党",
+    "wikimediaFile": "Yūko Obuchi 20121113 (cropped).jpg"
+  },
+  "onoda-kimi": {
+    "name": "小野田 紀美",
+    "party": "自由民主党",
+    "wikimediaFile": "Kimi Onoda.jpg"
+  },
+  "aoyama-shigeharu": {
+    "name": "青山 繁晴",
+    "party": "自由民主党",
+    "wikimediaFile": "Shigeharu aoyama.jpg"
+  },
+  "sato-masahisa": {
+    "name": "佐藤 正久",
+    "party": "自由民主党",
+    "wikimediaFile": "Masahisa Sato 2020.jpg"
+  },
+  "noda-seiko": {
+    "name": "野田 聖子",
+    "party": "自由民主党",
+    "wikimediaFile": "Seiko Noda 2021.jpg"
+  },
+  "kato-katsunobu": {
+    "name": "加藤 勝信",
+    "party": "自由民主党",
+    "wikimediaFile": "Katsunobu Kato 2020.jpg"
+  },
+  "hagiuda-koichi": {
+    "name": "萩生田 光一",
+    "party": "自由民主党",
+    "wikimediaFile": "Koichi Hagiuda 2019.jpg"
+  },
+  "nishimura-yasutoshi": {
+    "name": "西村 康稔",
+    "party": "自由民主党",
+    "wikimediaFile": "Yasutoshi Nishimura 2020.jpg"
+  },
+  "inada-tomomi": {
+    "name": "稲田 朋美",
+    "party": "自由民主党",
+    "wikimediaFile": "Tomomi Inada 2016.jpg"
+  },
+  "saito-ken": {
+    "name": "齋藤 健",
+    "party": "自由民主党",
+    "wikimediaFile": "Ken Saito 2017.jpg"
+  },
+  "kamiya-sohei": {
+    "name": "神谷 宗幣",
+    "party": "参政党",
+    "wikimediaFile": "Sohei_Kamiya_2023-2-19(1)_(cropped).jpg"
+  },
+  "kitano-yuko": {
+    "name": "北野 裕子",
+    "party": "参政党",
+    "wikimediaFile": "講演会にて_北野裕子.jpg"
+  },
+  "suzuki-atsushi": {
+    "name": "鈴木 敦",
+    "party": "参政党",
+    "wikimediaFile": null
+  },
+  "yoshikawa-rina": {
+    "name": "吉川 里奈",
+    "party": "参政党",
+    "wikimediaFile": "Rina_Yoshikawa_20250611.jpg"
+  },
+  "umemura-mizuho": {
+    "name": "梅村 みずほ",
+    "party": "参政党",
+    "wikimediaFile": "Mizuho_Umemura_20250512.jpg"
+  },
+  "matsuda-manabu": {
+    "name": "松田 学",
+    "party": "参政党",
+    "wikimediaFile": null
+  },
+  "ando-hiroshi": {
+    "name": "安藤 裕",
+    "party": "参政党",
+    "wikimediaFile": "Hiroshi_Ando.jpg"
+  },
+  "sayasaya": {
+    "name": "さやさや",
+    "party": "参政党",
+    "wikimediaFile": null
+  },
+  "yamanaka-sen": {
+    "name": "山中 泉",
+    "party": "参政党",
+    "wikimediaFile": "Sen_Yamanaka_20250719.jpg"
+  },
+  "goto-shota": {
+    "name": "後藤 翔太",
+    "party": "参政党",
+    "wikimediaFile": null
+  },
+  "iwamoto-mana": {
+    "name": "岩本 真奈",
+    "party": "参政党",
+    "wikimediaFile": "Mana_Iwamoto_20250719.jpg"
+  },
+  "adachi-yuji": {
+    "name": "足立 友治",
+    "party": "参政党",
+    "wikimediaFile": null
+  },
+  "sakurai-shoko": {
+    "name": "櫻井 晶子",
+    "party": "参政党",
+    "wikimediaFile": null
+  },
+  "sugimoto-junko": {
+    "name": "杉本 純子",
+    "party": "参政党",
+    "wikimediaFile": null
+  },
+  "nakada-yuko": {
+    "name": "中田 裕子",
+    "party": "参政党",
+    "wikimediaFile": null
+  },
+  "miyade-chisato": {
+    "name": "宮出 千里",
+    "party": "参政党",
+    "wikimediaFile": null
+  },
+  "otsu-chikara": {
+    "name": "大津 力",
+    "party": "参政党",
+    "wikimediaFile": null
+  },
+  "hajikano-hiroki": {
+    "name": "羽鹿野 弘樹",
+    "party": "参政党",
+    "wikimediaFile": null
+  },
+  "hyakuta-naoki": {
+    "name": "百田 尚樹",
+    "party": "日本保守党",
+    "wikimediaFile": "Naoki_Hyakuta_cropped_2_Naoki_Hyakuta_and_Kiyoaki_Kawanami_20171029.jpg"
+  },
+  "kitamura-haruo": {
+    "name": "北村 晴男",
+    "party": "日本保守党",
+    "wikimediaFile": "Haruo_Kitamura_20250713.jpg"
+  },
+  "shimada-yoichi": {
+    "name": "島田 洋一",
+    "party": "日本保守党",
+    "wikimediaFile": null
+  },
+  "kawamura-takashi": {
+    "name": "河村 たかし",
+    "party": "減税日本・ゆうこく連合",
+    "wikimediaFile": "河村たかし.JPG"
+  },
+  "takegami-yuko": {
+    "name": "竹上 裕子",
+    "party": "減税日本・ゆうこく連合",
+    "wikimediaFile": null
+  },
+  "hiraiwai-masaki": {
+    "name": "平岩 征樹",
+    "party": "減税日本・ゆうこく連合",
+    "wikimediaFile": null
+  },
+  "kawada-ryuhei": {
+    "name": "川田 龍平",
+    "party": "減税日本・ゆうこく連合",
+    "wikimediaFile": "Ryuhei Kawada sound truck in Kitasenju - July 12 2019.jpeg"
+  },
+  "arimoto-kaori": {
+    "name": "有本 香",
+    "party": "日本保守党",
+    "wikimediaFile": "Kaori Arimoto 20250712.jpg"
+  },
+  "mizuoka-shunichi": {
+    "name": "水岡 俊一",
+    "party": "立憲民主党",
+    "wikimediaFile": null
+  },
+  "tsujimoto-kiyomi": {
+    "name": "辻元 清美",
+    "party": "立憲民主党",
+    "wikimediaFile": "Kiyomi Tsujimoto.jpg"
+  },
+  "renho": {
+    "name": "蓮舫",
+    "party": "立憲民主党",
+    "wikimediaFile": "Renho Murata 2012.jpg"
+  },
+  "noda-yoshihiko": {
+    "name": "野田 佳彦",
+    "party": "中道改革連合",
+    "wikimediaFile": "Yoshihiko_Noda_2024.jpg"
+  },
+  "saito-tetsuo": {
+    "name": "斉藤 鉄夫",
+    "party": "中道改革連合",
+    "wikimediaFile": "Tetsuo_Saitō.jpg"
+  },
+  "azumi-jun": {
+    "name": "安住 淳",
+    "party": "中道改革連合",
+    "wikimediaFile": "Jun_Azumi_cropped_3_Jun_Azumi_and_Michèle_Flournoy_20111019.jpg"
+  },
+  "edano-yukio": {
+    "name": "枝野 幸男",
+    "party": "中道改革連合",
+    "wikimediaFile": "Yukio_Edano_2024-10-14_(Cropped).png"
+  },
+  "izumi-kenta": {
+    "name": "泉 健太",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "akaba-kazuyoshi": {
+    "name": "赤羽 一嘉",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "kondo-shoichi": {
+    "name": "近藤 昭一",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "kikuta-makiko": {
+    "name": "菊田 真紀子",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "nakano-hiromasa": {
+    "name": "中野 洋昌",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "mabuchi-sumio": {
+    "name": "馬淵 澄夫",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "honjo-satoshi": {
+    "name": "本庄 知史",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "okamoto-mitsunari": {
+    "name": "岡本 三成",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "ukishima-tomoko": {
+    "name": "浮島 とも子",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "arita-yoshifu": {
+    "name": "有田 芳生",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "abe-tomoko": {
+    "name": "阿部 知子",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "ozawa-ichiro": {
+    "name": "小沢 一郎",
+    "party": "中道改革連合",
+    "wikimediaFile": "Ichiro_Ozawa_cropped.jpg"
+  },
+  "ogawa-junya": {
+    "name": "小川 淳也",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "eda-kenji": {
+    "name": "江田 憲司",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "osaka-seiji": {
+    "name": "逢坂 誠二",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "ogushi-hiroshi": {
+    "name": "大串 博志",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "oshima-atsushi": {
+    "name": "大島 敦",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "onishi-kensuke": {
+    "name": "大西 健介",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "ochiai-takayuki": {
+    "name": "落合 貴之",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "ryu-hiroshi": {
+    "name": "笠 浩史",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "kaneko-megumi": {
+    "name": "金子 恵美",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "umetani-mamoru": {
+    "name": "梅谷 守",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "aoyagi-yoichiro": {
+    "name": "青柳 陽一郎",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "azuma-katsuya": {
+    "name": "東 克哉",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "arai-yutaka": {
+    "name": "荒井 優",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "arakaki-kunio": {
+    "name": "新垣 邦男",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "ishikawa-kaori": {
+    "name": "石川 香織",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "ichiki-tomoko": {
+    "name": "市來 伴子",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "ito-shunsuke": {
+    "name": "伊藤 俊輔",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "inatomi-shuji": {
+    "name": "稲富 修二",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "imai-masato": {
+    "name": "今井 雅人",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "kawauchi-hiroshi": {
+    "name": "川内 博史",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "kii-takashi": {
+    "name": "城井 崇",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "genba-kentaro": {
+    "name": "源馬 謙太郎",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "goto-yuichi": {
+    "name": "後藤 祐一",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "kondo-kazuya": {
+    "name": "近藤 和也",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "shinohara-takashi": {
+    "name": "篠原 孝",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "shigetoku-kazuhiko": {
+    "name": "重徳 和彦",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "shiraishi-yoichi": {
+    "name": "白石 洋一",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "kozu-takeshi": {
+    "name": "神津 たけし",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "shibata-katsuyuki": {
+    "name": "柴田 勝之",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "suetake-takuya": {
+    "name": "末武 拓矢",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "suga-naokazu": {
+    "name": "菅 直人",
+    "party": "中道改革連合",
+    "wikimediaFile": "Naoto_Kan_cropped_Naoto_Kan_20100526.jpg"
+  },
+  "suzuki-shunichi": {
+    "name": "鈴木 俊一",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "tagaya-ryuji": {
+    "name": "多ヶ谷 亮",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "takagi-yoshiaki": {
+    "name": "高木 義明",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "takaishi-akira": {
+    "name": "高石 あきら",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "tanioka-eriko": {
+    "name": "谷岡 郁子",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "tsuji-motoki": {
+    "name": "辻元 清美",
+    "party": "中道改革連合",
+    "wikimediaFile": "Kiyomi_Tsujimoto_cropped_2_Kiyomi_Tsujimoto_20170706.jpg"
+  },
+  "terada-manabu": {
+    "name": "寺田 学",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "nakai-hiroshi": {
+    "name": "中井 洽",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "nakazawa-kenichi": {
+    "name": "中澤 健一",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "nishimura-chinami": {
+    "name": "西村 智奈美",
+    "party": "中道改革連合",
+    "wikimediaFile": "Chinami Nishimura 2012.jpg"
+  },
+  "nunomura-yuichi": {
+    "name": "布村 裕一",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "haraguchi-kazuhiro": {
+    "name": "原口 一博",
+    "party": "減税日本・ゆうこく連合",
+    "wikimediaFile": "Kazuhiro Haraguchi 200910.jpg"
+  },
+  "hirano-hirofumi": {
+    "name": "平野 博文",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "fukuyama-tetsuro": {
+    "name": "福山 哲郎",
+    "party": "中道改革連合",
+    "wikimediaFile": "Tetsurō Fukuyama 20090923.jpg"
+  },
+  "matsuki-ken": {
+    "name": "松木 けんこう",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "yamazaki-makoto": {
+    "name": "山崎 誠",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "yanagida-minoru": {
+    "name": "柳田 稔",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "kitagawa-kazuo": {
+    "name": "北側 一雄",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "tsunoda-hideo": {
+    "name": "角田 秀穂",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "kasai-koichi": {
+    "name": "河西 宏一",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "isa-shinichi": {
+    "name": "伊佐 進一",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "tsutsui-masahiro": {
+    "name": "筒井 信隆",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "togashi-tomoe": {
+    "name": "富樫 とも子",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "doi-takeshi": {
+    "name": "土井 亨",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "morimoto-shinsuke": {
+    "name": "森本 真治",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "yunoki-michiyoshi": {
+    "name": "柚木 道義",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "yoshikawa-hajime": {
+    "name": "吉川 元",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "yoshida-tsunehiko": {
+    "name": "吉田 統彦",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "yoshida-harumi": {
+    "name": "吉田 晴美",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "yoneyama-ryuichi": {
+    "name": "米山 隆一",
+    "party": "中道改革連合",
+    "wikimediaFile": "Ryuichi-Yoneyama 2022.5.jpg"
+  },
+  "watanabe-so": {
+    "name": "渡辺 創",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "watanabe-shu": {
+    "name": "渡辺 周",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "waseda-yuki": {
+    "name": "早稲田 ゆき",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "noma-takeshi": {
+    "name": "野間 健",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "nakajima-katsuhito": {
+    "name": "中島 克仁",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "mitsui-yutaka": {
+    "name": "三井 豊",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "miyaguchi-haruki": {
+    "name": "宮口 治子",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "murata-naoko": {
+    "name": "村田 直子",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "mori-yuko": {
+    "name": "森 裕子",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "mori-motohiro": {
+    "name": "森本 宏樹",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "yabuki-katsuyuki": {
+    "name": "矢吹 勝之",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "yamagishi-junko": {
+    "name": "山岸 一生",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "yamanoi-kazunori": {
+    "name": "山井 和則",
+    "party": "中道改革連合",
+    "wikimediaFile": "Kazunori Yamanoi 20230312 (cropped).jpg"
+  },
+  "yabuki-fumio": {
+    "name": "藪内 文人",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "yamada-katsuyuki": {
+    "name": "山田 勝彦",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "yamada-mari": {
+    "name": "山田 まり",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "yamagami-yutaka": {
+    "name": "山上 豊",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "yamamoto-yoshihiro": {
+    "name": "山本 芳博",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "nagatuma-akira": {
+    "name": "長妻 昭",
+    "party": "中道改革連合",
+    "wikimediaFile": "Akira_Nagatuma_201709_%28cropped%29.jpg"
+  },
+  "okada-katsuya": {
+    "name": "岡田 克也",
+    "party": "中道改革連合",
+    "wikimediaFile": "Katsuya_Okada_20151130_%28cropped%29.jpg"
+  },
+  "maki-yoshio": {
+    "name": "牧 義夫",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "hasegawa-yoshikazu": {
+    "name": "長谷川 嘉一",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "moriyama-hiroyuki": {
+    "name": "森山 浩行",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "yara-tomohiro": {
+    "name": "屋良 朝博",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "yamahana-ikuo": {
+    "name": "山花 郁夫",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "okuda-naoki": {
+    "name": "奥田 直樹",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "kobayashi-chiyori": {
+    "name": "小林 千代里",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "sato-hisashi": {
+    "name": "佐藤 久",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "nishimura-kenji": {
+    "name": "西村 健二",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "hayashida-hirotoshi": {
+    "name": "林田 博利",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "fukushige-takahiro": {
+    "name": "福重 隆浩",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "honda-taiichi": {
+    "name": "本多 太一郎",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "ogura-yasuo": {
+    "name": "小倉 康夫",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "okamoto-mitsunari-cra": {
+    "name": "岡本 光成",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "saito-tetsuya": {
+    "name": "斉藤 哲也",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "oikawa-yusuke": {
+    "name": "及川 雄介",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "otsuji-hideaki": {
+    "name": "大塚 秀昭",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "kamiya-yosuke": {
+    "name": "紙谷 洋介",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "kudo-tetsuya": {
+    "name": "工藤 哲也",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "kumagai-yutaka": {
+    "name": "熊谷 裕人",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "kodama-kenji": {
+    "name": "児玉 健二",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "tanaka-kentaro": {
+    "name": "田中 健太郎",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "nakamura-hiroshi": {
+    "name": "中村 浩",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "nomoto-taro": {
+    "name": "野本 太郎",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "hashimoto-junko": {
+    "name": "橋本 純子",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "fujita-masahiro": {
+    "name": "藤田 正弘",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "matsuzaki-yoshihiro": {
+    "name": "松崎 義弘",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "sawa-takahiro": {
+    "name": "澤 孝博",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "sugiyama-kenji": {
+    "name": "杉山 健二",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "suzuki-shoji": {
+    "name": "鈴木 庄次",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "takeda-makoto": {
+    "name": "武田 誠",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "tanaka-kenji": {
+    "name": "田中 健二",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "tokuda-takeaki": {
+    "name": "徳田 健明",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "nakagawa-masaharu": {
+    "name": "中川 正治",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "nakatani-shinichi": {
+    "name": "中谷 真一",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "nishino-kohei": {
+    "name": "西野 康平",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "hata-hideaki": {
+    "name": "畑 英明",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "hamamoto-junichi": {
+    "name": "浜本 純一",
+    "party": "国民民主党",
+    "wikimediaFile": null
+  },
+  "hirata-kenji": {
+    "name": "平田 健二",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "hosoda-yoshiki": {
+    "name": "細田 善樹",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "maeda-shoji": {
+    "name": "前田 昌二",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "matsumoto-satoshi": {
+    "name": "松本 聡",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "miyake-kazuo": {
+    "name": "三宅 和雄",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "yamamoto-kazuyuki": {
+    "name": "山本 一之",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "yoshizawa-masao": {
+    "name": "吉沢 正雄",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "wakabayashi-koji": {
+    "name": "若林 浩二",
+    "party": "中道改革連合",
+    "wikimediaFile": null
+  },
+  "yamamoto-taro": {
+    "name": "山本 太郎",
+    "party": "れいわ新選組",
+    "wikimediaFile": "Tarō_Yamamoto_2012.jpg"
+  },
+  "oishi-akiko": {
+    "name": "大石 あきこ",
+    "party": "れいわ新選組",
+    "wikimediaFile": "Akiko Oishi, Member of the House of Representatives, addresses a rally in Fukuoka City.jpg"
+  },
+  "kushibuchi-mari": {
+    "name": "櫛渕 万里",
+    "party": "れいわ新選組",
+    "wikimediaFile": "櫛渕万里.jpg"
+  },
+  "takai-takashi": {
+    "name": "高井 崇志",
+    "party": "れいわ新選組",
+    "wikimediaFile": "Takashi Takai 2022-6-26(cropped).jpg"
+  },
+  "uemura-hideaki": {
+    "name": "上村 英明",
+    "party": "れいわ新選組",
+    "wikimediaFile": null
+  },
+  "sakaguchi-naoto": {
+    "name": "阪口 直人",
+    "party": "れいわ新選組",
+    "wikimediaFile": null
+  },
+  "sawara-wakako": {
+    "name": "佐原 若子",
+    "party": "れいわ新選組",
+    "wikimediaFile": null
+  },
+  "yahata-ai": {
+    "name": "八幡 愛",
+    "party": "れいわ新選組",
+    "wikimediaFile": null
+  },
+  "yamakawa-jin": {
+    "name": "山川 仁",
+    "party": "れいわ新選組",
+    "wikimediaFile": null
+  },
+  "kimura-eiko": {
+    "name": "木村 英子",
+    "party": "れいわ新選組",
+    "wikimediaFile": null
+  },
+  "tenbata-daisuke": {
+    "name": "天畠 大輔",
+    "party": "れいわ新選組",
+    "wikimediaFile": "Daisuke Tenbata 2022-6-26(cropped).jpg"
+  },
+  "oshima-kyushuo": {
+    "name": "大島 九州男",
+    "party": "れいわ新選組",
+    "wikimediaFile": null
+  },
+  "tamura-tomoko": {
+    "name": "田村 智子",
+    "party": "日本共産党",
+    "wikimediaFile": "Tomoko Tamura 2024-10-26(4).jpg"
+  },
+  "shii-kazuo": {
+    "name": "志位 和夫",
+    "party": "日本共産党",
+    "wikimediaFile": "Kazuo Shii 2022-6-23.jpg"
+  },
+  "koike-akira": {
+    "name": "小池 晃",
+    "party": "日本共産党",
+    "wikimediaFile": "Akira Koike 2023-3-21.jpg"
+  },
+  "yamazoe-taku": {
+    "name": "山添 拓",
+    "party": "日本共産党",
+    "wikimediaFile": "Taku Yamazoe 2022-5-7.jpg"
+  },
+  "kira-yoshiko": {
+    "name": "吉良 よし子",
+    "party": "日本共産党",
+    "wikimediaFile": "Yoshiko Kira 2024-6-30(1).jpg"
+  },
+  "yoshimura-hirofumi": {
+    "name": "吉村 洋文",
+    "party": "日本維新の会",
+    "wikimediaFile": "Hirofumi Yoshimura.jpg"
+  },
+  "fujita-fumitake": {
+    "name": "藤田 文武",
+    "party": "日本維新の会",
+    "wikimediaFile": "Fumitake Fujita 2022-6-26(cropped).jpg"
+  },
+  "baba-nobuyuki": {
+    "name": "馬場 伸幸",
+    "party": "日本維新の会",
+    "wikimediaFile": "Nobuyuki Baba (cropped).jpg"
+  },
+  "otokita-shun": {
+    "name": "音喜多 駿",
+    "party": "日本維新の会",
+    "wikimediaFile": "Shun Otokita 2022-10-21.jpg"
+  },
+  "adachi-yasushi": {
+    "name": "足立 康史",
+    "party": "日本維新の会",
+    "wikimediaFile": "国民民主 足立康史.jpg"
+  },
+  "matsuzawa-shigefumi": {
+    "name": "松沢 成文",
+    "party": "日本維新の会",
+    "wikimediaFile": "Shigefumi Matsuzawa 2021-8-8 (1)(cropped).jpg"
+  },
+  "yanagase-hirofumi": {
+    "name": "柳ヶ瀬 裕文",
+    "party": "日本維新の会",
+    "wikimediaFile": "Hirofumi Yanagase 20171010 (cropped).jpg"
+  },
+  "aoyagi-hitoshi": {
+    "name": "青柳 仁士",
+    "party": "日本維新の会",
+    "wikimediaFile": "Hitoshiaoyagi.jpg"
+  },
+  "inoue-hideki": {
+    "name": "井上 英孝",
+    "party": "日本維新の会",
+    "wikimediaFile": null
+  },
+  "maru-yamasaki": {
+    "name": "丸山 穂高",
+    "party": "日本維新の会",
+    "wikimediaFile": null
+  },
+  "tamaki-yuichiro": {
+    "name": "玉木 雄一郎",
+    "party": "国民民主党",
+    "wikimediaFile": "Yuichiro Tamaki 2017.jpg"
+  },
+  "maehara-seiji": {
+    "name": "前原 誠司",
+    "party": "国民民主党",
+    "wikimediaFile": "Seiji Maehara 2012.jpg"
+  },
+  "furukawa-motohisa": {
+    "name": "古川 元久",
+    "party": "国民民主党",
+    "wikimediaFile": "Motohisa Furukawa cropped 3 Motohisa Furukawa and Michihiko Kono 20120830.jpg"
+  },
+  "shinba-kazuya": {
+    "name": "榛葉 賀津也",
+    "party": "国民民主党",
+    "wikimediaFile": "榛葉賀津也2017年.jpg"
+  },
+  "ito-takae": {
+    "name": "伊藤 孝恵",
+    "party": "国民民主党",
+    "wikimediaFile": "Takae Ito 20230703.jpg"
+  },
+  "otsuka-kohei": {
+    "name": "大塚 耕平",
+    "party": "国民民主党",
+    "wikimediaFile": "Kohei Otsuka 20170619.jpg"
+  },
+  "anno-takahiro": {
+    "name": "安野 貴博",
+    "party": "チームみらい",
+    "wikimediaFile": "Takahiro Anno 2024-7-6(3).jpg"
+  },
+  "tsuchihashi-akihiro": {
+    "name": "土橋 あきひろ（候補者）",
+    "party": "チームみらい",
+    "wikimediaFile": null
+  },
+  "mineshima-yuya": {
+    "name": "みねしま 侑也（候補者）",
+    "party": "チームみらい",
+    "wikimediaFile": null
+  },
+  "usami-noboru": {
+    "name": "うさみ 登（候補者）",
+    "party": "チームみらい",
+    "wikimediaFile": null
+  },
+  "takayama-satoshi": {
+    "name": "高山 さとし（候補者）",
+    "party": "チームみらい",
+    "wikimediaFile": null
+  },
+  "kobayashi-shuhei-tm": {
+    "name": "小林 しゅうへい（候補者）",
+    "party": "チームみらい",
+    "wikimediaFile": null
+  },
+  "kawai-michio": {
+    "name": "河合 みちお（候補者）",
+    "party": "チームみらい",
+    "wikimediaFile": null
+  },
+  "yamada-eri-tm": {
+    "name": "山田 えり（候補者）",
+    "party": "チームみらい",
+    "wikimediaFile": null
+  },
+  "inahara-muneyoshi": {
+    "name": "稲原 むねよし（候補者）",
+    "party": "チームみらい",
+    "wikimediaFile": null
+  },
+  "hayashi-takumi": {
+    "name": "林 たくみ（候補者）",
+    "party": "チームみらい",
+    "wikimediaFile": null
+  },
+  "muto-kazuko": {
+    "name": "武藤 かず子（候補者）",
+    "party": "チームみらい",
+    "wikimediaFile": null
+  },
+  "fukushima-mizuho": {
+    "name": "福島 瑞穂",
+    "party": "社民党",
+    "wikimediaFile": "Mizuho Fukushima 2010.jpg"
+  },
+  "ohtsubaki-yuko": {
+    "name": "大椿 ゆうこ",
+    "party": "社民党",
+    "wikimediaFile": "Yuko Ohtsubaki 2025-05-03.jpg"
+  },
+  "lasalle-ishii": {
+    "name": "ラサール石井",
+    "party": "社民党",
+    "wikimediaFile": "ラサール石井 20250705.jpg"
+  }
+}

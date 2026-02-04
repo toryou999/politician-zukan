@@ -121,13 +121,23 @@ export default function MyCabinet() {
 
     const handleShareX = () => {
         const text = encodeURIComponent(generateShareText());
-        const url = encodeURIComponent(window.location.href);
+
+        // 内閣データのシリアライズ
+        const cabinetData = encodeURIComponent(JSON.stringify(cabinet));
+        // クッションページ（動的OGP）のURL
+        const shareUrl = `https://politician-zukan.vercel.app/api/share?cabinet=${cabinetData}`;
+        const url = encodeURIComponent(shareUrl);
+
         window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
     };
 
     const handleCopyUrl = async () => {
         try {
-            await navigator.clipboard.writeText(window.location.href);
+            // URLコピーも動的OGP用URLにする（LINEなどでも画像が出るように）
+            const cabinetData = encodeURIComponent(JSON.stringify(cabinet));
+            const shareUrl = `https://politician-zukan.vercel.app/api/share?cabinet=${cabinetData}`;
+
+            await navigator.clipboard.writeText(shareUrl);
             setShowCopied(true);
             setTimeout(() => setShowCopied(false), 2000);
         } catch (err) {
