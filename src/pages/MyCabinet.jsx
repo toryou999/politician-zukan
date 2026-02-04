@@ -5,6 +5,7 @@ import { cabinetPositions, getPositionsByRow, getPositionById } from '../data/ca
 import { politicians, getPoliticianById } from '../data/politicians';
 import { getWikimediaImageUrl } from '../utils/wikimedia';
 import CabinetSlot from '../components/CabinetSlot';
+import SEO from '../components/SEO';
 
 // 議員選択モーダル
 function PoliticianSelectModal({ position, onClose, onSelect }) {
@@ -145,6 +146,10 @@ export default function MyCabinet() {
 
     return (
         <div className="container my-cabinet-page">
+            <SEO
+                title="マイベスト内閣 - 政治家図鑑"
+                description="あなただけの理想の内閣を組閣しよう！総理大臣から特命担当大臣まで、推し議員を選んでシェア！"
+            />
             <Link to="/" className="back-link">← 政党一覧に戻る</Link>
 
             <header className="cabinet-header">

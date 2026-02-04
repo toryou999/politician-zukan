@@ -4,6 +4,7 @@ import { getPoliticianById, politicians } from '../data/politicians';
 import { useState, useEffect, useMemo } from 'react';
 import { getWikimediaImageUrl } from '../utils/wikimedia';
 import PoliticianCard from '../components/PoliticianCard';
+import SEO from '../components/SEO';
 
 function PartyCard({ party }) {
     const leader = party.leaderId ? getPoliticianById(party.leaderId) : null;
@@ -70,6 +71,7 @@ function PartyList() {
 
     return (
         <div className="container">
+            <SEO />
             <header className="list-header">
                 <h1>政治家図鑑</h1>
                 <p className="list-subtitle">政治家の立ち位置が一瞬でわかる</p>

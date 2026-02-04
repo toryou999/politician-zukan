@@ -11,6 +11,7 @@ import BillSection from '../components/BillSection';
 import CareerSection from '../components/CareerSection';
 import SocialLinks from '../components/SocialLinks';
 import RivalSection from '../components/RivalSection';
+import SEO from '../components/SEO';
 
 
 function PoliticianDetail() {
@@ -50,6 +51,11 @@ function PoliticianDetail() {
 
     return (
         <div className="container">
+            <SEO
+                title={`${politician.name}（${politician.party}）のスタンス・経歴`}
+                description={`${politician.name}（${politician.party}）のプロフィール、政策スタンス、経歴、ライバル関係をチェック！政治家図鑑で詳細な分析を見よう。`}
+                image={photoUrl}
+            />
             <div className="breadcrumb">
                 <Link to="/" className="back-link">トップ</Link>
                 <span className="breadcrumb-separator">›</span>

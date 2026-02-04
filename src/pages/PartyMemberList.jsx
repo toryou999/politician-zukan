@@ -3,6 +3,7 @@ import { getPoliticiansByParty } from '../data/politicians';
 import { getPartyById } from '../data/partyData';
 import { useState, useMemo } from 'react';
 import PoliticianCard from '../components/PoliticianCard';
+import SEO from '../components/SEO';
 
 function PartyMemberList() {
     const { partyId } = useParams();
@@ -51,6 +52,10 @@ function PartyMemberList() {
 
     return (
         <div className="container">
+            <SEO
+                title={`${targetParty.name} 議員一覧`}
+                description={`${targetParty.name}（${targetParty.shortName}）の所属議員一覧です。${targetParty.description}`}
+            />
             <Link to="/" className="back-link">← 政党一覧に戻る</Link>
 
             <header className="party-header-section" style={{ borderBottomColor: targetParty.color }}>
