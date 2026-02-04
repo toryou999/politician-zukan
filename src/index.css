@@ -308,7 +308,19 @@ ol {
 }
 
 .party-badge.genzei {
-  background-color: #FF6F00;
+  background-color: #FFB84D;
+}
+
+.update-notice {
+  font-size: 0.85rem;
+  color: #e65100;
+  /* オレンジ系 */
+  font-weight: bold;
+  margin-top: 8px;
+  background-color: #fff3e0;
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
 }
 
 .party-badge.education {

@@ -1,4 +1,4 @@
-module.exports = function (req, res) {
+export default function handler(req, res) {
     const { cabinet } = req.query;
 
     // アプリのベースURL (Vercel環境変数または固定)
