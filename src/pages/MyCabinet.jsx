@@ -116,17 +116,7 @@ export default function MyCabinet() {
 
     // シェアテキスト生成
     const generateShareText = () => {
-        const members = Object.entries(cabinet).map(([posId, polId]) => {
-            const pos = getPositionById(posId);
-            const pol = getPoliticianById(polId);
-            return `${pos?.shortName}: ${pol?.name}`;
-        });
-
-        if (members.length === 0) {
-            return 'マイベスト内閣を作ってみよう！ #政治家図鑑 #マイベスト内閣';
-        }
-
-        return `私のベスト内閣\n${members.join('\n')}\n\n#政治家図鑑 #マイベスト内閣`;
+        return '私の選ぶマイベスト内閣はこちら。\n\n#政治家図鑑 #マイベスト内閣';
     };
 
     const handleShareX = () => {
