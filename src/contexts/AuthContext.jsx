@@ -55,35 +55,48 @@ export function AuthProvider({ children }) {
     // 擬似ログイン（Supabase未設定時のフォールバック、または簡単ログイン）
     const login = async (userData) => {
         // 本来はここで supabase.auth.signInWith... を呼ぶ
-        // 今はまだUI上「名前を入力して開始」なので、匿名ログイン的に扱うか、モックのままにする
-        // Supabaseが有効なら匿名ログイン（TODO）
-
-        const dummyUser = {
-            id: 'user_' + Date.now(),
-            name: userData?.name || 'ゲスト総理',
-            isGuest: true,
-            ...userData
+        // ログイン（メールアドレス）
+        const signIn = async (email, password) => {
+            const { data, error } = await supabase.auth.signInWithPassword({
+                email,
+                password,
+            });
+            if (error) throw error;
+            return data;
         };
-        setUser(dummyUser);
-        localStorage.setItem('politician_arcade_user', JSON.stringify(dummyUser));
-    };
 
-    const logout = async () => {
-        await supabase.auth.signOut();
-        setUser(null);
-        localStorage.removeItem('politician_arcade_user');
-    };
+        // 新規登録（メールアドレス）
+        const signUp = async (email, password, name) => {
+            const { data, error } = await supabase.auth.signUp({
+                email,
+                password,
+                options: {
+                    data: {
+                        name: name,
+                    },
+                },
+            });
+            if (error) throw error;
+            return data;
+        };
 
-    const value = {
-        user,
-        login,
-        logout,
-        loading
-    };
+        const logout = async () => {
+            await supabase.auth.signOut();
+            setUser(null);
+            localStorage.removeItem('politician_arcade_user');
+        };
 
-    return (
-        <AuthContext.Provider value={value}>
-            {!loading && children}
-        </AuthContext.Provider>
-    );
-}
+        const value = {
+            user,
+            signIn,
+            signUp,
+            logout,
+            loading
+        };
+
+        return (
+            <AuthContext.Provider value={value}>
+                {!loading && children}
+            </AuthContext.Provider>
+        );
+    }
