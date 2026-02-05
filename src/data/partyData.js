@@ -8,6 +8,7 @@ export const partyData = [
         description: '伝統と創造、責任ある政治。',
         className: 'ldp',
         position: { x: 40, y: -10 },
+        positionReason: '伝統的な価値観を重視する保守政党でありながら、経済政策では市場競争を促進する立場をとっています。',
     },
     {
         id: 'cdp',
@@ -18,6 +19,7 @@ export const partyData = [
         description: '人へ 未来へ まっとうな政治。',
         className: 'cdp',
         position: { x: -40, y: 40 },
+        positionReason: '個人の権利や多様性を尊重（リベラル）し、政府による再分配機能を強化する「大きな政府」を志向しています。',
     },
     {
         id: 'komeito',
@@ -28,6 +30,7 @@ export const partyData = [
         description: '小さな声を、聴く力。',
         className: 'komeito',
         position: { x: 0, y: 0 },
+        positionReason: '福祉政策を重視し、中道的な立ち位置を維持していますが、自民党との連立により保守寄りの政策にも協調します。',
     },
     {
         id: 'ishin',
@@ -38,6 +41,7 @@ export const partyData = [
         description: '身を切る改革、実のある改革。',
         className: 'ishin',
         position: { x: 80, y: 60 },
+        positionReason: '規制緩和や競争力強化（市場重視）を掲げつつ、地方分権や統治機構改革など急進的な改革を志向しています。',
     },
     {
         id: 'dpp',
@@ -48,6 +52,7 @@ export const partyData = [
         description: '対決より解決。手取りを増やす。',
         className: 'dpp',
         position: { x: 40, y: 30 },
+        positionReason: '現実的な安全保障政策（保守寄り）と、家計支援など積極財政による分配政策を組み合わせています。',
     },
     {
         id: 'jcp',
@@ -58,6 +63,7 @@ export const partyData = [
         description: '国民が主人公。',
         className: 'jcp',
         position: { x: -80, y: 80 },
+        positionReason: '企業への規制強化や富の再分配を最も強く主張し、日米安保廃棄など現状変革を掲げる革新政党です。',
     },
     {
         id: 'reiwa',
@@ -68,6 +74,7 @@ export const partyData = [
         description: '何があっても心配するな。',
         className: 'reiwa',
         position: { x: -50, y: 50 },
+        positionReason: '消費税廃止など極めて積極的な財政出動（分配）と、社会的弱者の権利擁護（リベラル）を前面に掲げています。',
     },
     {
         id: 'sanseito',
@@ -78,6 +85,7 @@ export const partyData = [
         description: '日本をなめるな。',
         className: 'sanseito',
         position: { x: -10, y: -70 },
+        positionReason: 'ナショナリズムを基調とした伝統回帰（保守・共同体）を掲げ、グローバリズムへの対抗姿勢を鮮明にしています。',
     },
     {
         id: 'hoshuto',
@@ -88,6 +96,7 @@ export const partyData = [
         description: '日本を豊かに、強く。',
         className: 'hoshuto',
         position: { x: 30, y: -80 },
+        positionReason: '伝統的な国体や歴史認識を重視する強い保守思想を持ち、リベラル的な価値観と対対立する立場をとっています。',
     },
     {
         id: 'mirai',
@@ -98,6 +107,29 @@ export const partyData = [
         description: 'テクノロジーで民主主義をアップデート。',
         className: 'mirai',
         position: { x: 20, y: 40 },
+        positionReason: '特定のイデオロギーよりもデータとエビデンスを重視し、テクノロジーによる社会課題解決を目指す実用主義的な立場。',
+    },
+    {
+        id: 'genzei',
+        name: '減税日本・ゆうこく連合',
+        shortName: '減税',
+        leaderId: 'ishihama-tetsunobu', // 石濱哲信
+        color: '#FFB84D',
+        description: '減税と国守りを掲げる。',
+        className: 'genzei',
+        position: { x: 90, y: -80 },
+        positionReason: '徹底した減税（市場重視）と、自衛隊出身者による強い国防意識（保守・国家観）を組み合わせた独自路線です。',
+    },
+    {
+        id: 'japan-first',
+        name: '日本第一党',
+        shortName: '日本一',
+        leaderId: 'sakurai-makoto', // 桜井誠
+        color: '#000000',
+        description: '日本第一主義を掲げる。',
+        className: 'japan-first',
+        position: { x: 95, y: -95 },
+        positionReason: '「日本第一主義」を掲げ、外国人参政権反対や移民規制など、極めて強いナショナリズム（国益重視）を主張しています。',
     },
     {
         id: 'chudo',
