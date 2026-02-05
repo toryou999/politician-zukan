@@ -103,21 +103,10 @@ export default function MyCabinet() {
     const [showCopied, setShowCopied] = useState(false);
     const [saveMessage, setSaveMessage] = useState(''); // 保存完了メッセージ
 
-    // マウント時に保存された内閣を読み込む
+    // マウント時に保存された内閣を読み込む (Contextに任せるため不要だが、念のため既存ロジックは無効化)
     useEffect(() => {
-        const savedCabinet = localStorage.getItem('my_saved_cabinet');
-        if (savedCabinet && typeof setCabinet === 'function') {
-            // 簡易的な読み込みロジック (本来はContext内でやるべき)
-            try {
-                const parsed = JSON.parse(savedCabinet);
-                if (parsed && typeof parsed === 'object') {
-                    setCabinet(parsed);
-                }
-            } catch (e) {
-                console.error('Failed to load cabinet', e);
-            }
-        }
-    }, []); // 依存配列は空で固定
+        // Contextが正となるため、ここでの上書きは廃止
+    }, []);
 
     const handleSave = () => {
         if (!user) {
