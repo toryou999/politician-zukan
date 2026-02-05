@@ -85,21 +85,7 @@ function PartyList() {
             <AdsCard slot="top-page" />
 
             <div className="container">
-                {/* タブ切り替え */}
-                <div className="view-tabs">
-                    <button
-                        className={`view-tab ${viewMode === 'map' ? 'active' : ''}`}
-                        onClick={() => setViewMode('map')}
-                    >
-                        🗾 立ち位置マップ
-                    </button>
-                    <button
-                        className={`view-tab ${viewMode === 'list' ? 'active' : ''}`}
-                        onClick={() => setViewMode('list')}
-                    >
-                        📋 政党リスト
-                    </button>
-                </div>
+
 
 
                 {/* 検索ボックス */}
