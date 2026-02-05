@@ -424,10 +424,10 @@ ol {
 }
 
 .view-tab.active {
-  background: var(--color-primary);
+  background: var(--color-accent);
   color: white;
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
 .fade-in {
@@ -465,12 +465,12 @@ ol {
 }
 
 .party-plot {
-  transition: transform 0.2s;
   cursor: pointer;
 }
 
 .party-plot:hover {
-  transform: scale(1.2);
+  /* transform: scale(1.2); アニメーション削除 */
+  filter: brightness(0.9);
 }
 
 .map-help-text {
@@ -1002,7 +1002,7 @@ ol {
 /* ===== List Page ===== */
 .list-header {
   text-align: center;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-sm);
 }
 
 .list-header h1 {
@@ -1021,7 +1021,7 @@ ol {
 .search-container {
   position: relative;
   max-width: 500px;
-  margin: var(--spacing-lg) auto 0;
+  margin: var(--spacing-sm) auto 0;
 }
 
 .search-input {
