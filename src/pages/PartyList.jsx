@@ -101,11 +101,7 @@ function PartyList() {
                     </button>
                 </div>
 
-                {viewMode === 'map' && (
-                    <div className="fade-in">
-                        <PartyPositionMap parties={partyData} />
-                    </div>
-                )}
+
                 {/* 検索ボックス */}
                 <div className="search-container">
                     <input
