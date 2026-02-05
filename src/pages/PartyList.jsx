@@ -106,16 +106,7 @@ function PartyList() {
                         <PartyPositionMap parties={partyData} />
                     </div>
                 )}
-
-                {viewMode === 'list' && !searchQuery && (
-                    <div className="party-grid fade-in">
-                        {partyData.map(party => (
-                            <PartyCard key={party.id} party={party} />
-                        ))}
-                    </div>
-                )}
-
-                <h2 className="section-title" style={{ marginTop: '40px' }}>政治家を探す</h2>
+                {/* 検索ボックス */}
                 <div className="search-container">
                     <input
                         type="text"
@@ -135,63 +126,55 @@ function PartyList() {
                     )}
                 </div>
 
-            </div>
-        </div>
+                {/* タブ切り替え（検索時以外に表示） */}
+                {!searchQuery && (
+                    <div className="view-tabs">
+                        <button
+                            className={`view-tab ${viewMode === 'map' ? 'active' : ''}`}
+                            onClick={() => setViewMode('map')}
+                        >
+                            🗺️ 立ち位置マップ
+                        </button>
+                        <button
+                            className={`view-tab ${viewMode === 'list' ? 'active' : ''}`}
+                            onClick={() => setViewMode('list')}
+                        >
+                            📋 政党リスト
+                        </button>
+                    </div>
+                )}
 
-            {
-        searchQuery ? (
-            <div className="search-results">
-                {filteredPoliticians.length === 0 ? (
-                    <div className="no-results">
-                        <p>「{searchQuery}」に一致する政治家が見つかりませんでした。</p>
+                {searchQuery ? (
+                    <div className="search-results">
+                        {filteredPoliticians.length === 0 ? (
+                            <div className="no-results">
+                                <p>「{searchQuery}」に一致する政治家が見つかりませんでした。</p>
+                            </div>
+                        ) : (
+                            <div className="politician-grid">
+                                {filteredPoliticians.map(politician => (
+                                    <PoliticianCard key={politician.id} politician={politician} />
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                ) : viewMode === 'map' ? (
+                    <div className="fade-in">
+                        <PartyPositionMap parties={partyData} />
+                        <p style={{ textAlign: 'center', marginTop: '10px', color: '#666', fontSize: '0.9rem' }}>
+                            ※各党のアイコンをタップすると詳細が見れます
+                        </p>
                     </div>
                 ) : (
-                    <div className="politician-grid">
-                        {filteredPoliticians.map(politician => (
-                            <PoliticianCard key={politician.id} politician={politician} />
+                    <div className="party-grid fade-in">
+                        {partyData.map(party => (
+                            <PartyCard key={party.id} party={party} />
                         ))}
                     </div>
                 )}
-            </div>
-        ) : viewMode === 'list' && (
-            <div className="party-grid">
-                {partyData.map(party => (
-                    <PartyCard key={party.id} party={party} />
-                ))}
-            </div>
-        )
-    }
-        </div >
-    );
-}
-        </div >
 
-{
-    searchQuery?(
-            <div className = "search-results" >
-        {
-            filteredPoliticians.length === 0 ? (
-                <div className="no-results">
-                    <p>「{searchQuery}」に一致する政治家が見つかりませんでした。</p>
-                </div>
-            ) : (
-                <div className="politician-grid">
-                    {filteredPoliticians.map(politician => (
-                        <PoliticianCard key={politician.id} politician={politician} />
-                    ))}
-                </div>
-            )
-        }
             </div>
-        ) : (
-    <div className="party-grid">
-        {partyData.map(party => (
-            <PartyCard key={party.id} party={party} />
-        ))}
-    </div>
-)
-    }
-        </div >
+        </div>
     );
 }
 
