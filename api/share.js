@@ -14,11 +14,11 @@ export default function handler(req, res) {
 <html>
 <head>
     <meta charset="utf-8">
-    <title>私の最強内閣 | 政治家図鑑</title>
-    <meta name="description" content="私が選んだ最強の内閣メンバーを見てください！ #政治家図鑑">
+    <title>私の最強内閣 | 政治アーケード</title>
+    <meta name="description" content="私が選んだ最強の内閣メンバーを見てください！ #政治アーケード">
     
     <!-- OGP -->
-    <meta property="og:title" content="私の最強内閣 | 政治家図鑑">
+    <meta property="og:title" content="私の最強内閣 | 政治アーケード">
     <meta property="og:description" content="私が選んだ最強の内閣メンバーを見てください！">
     <meta property="og:image" content="${imageUrl}">
     <meta property="og:url" content="${appUrl}">
@@ -37,7 +37,7 @@ export default function handler(req, res) {
     </script>
 </head>
 <body>
-    <p>Redirecting to <a href="${appUrl}">政治家図鑑</a>...</p>
+    <p>Redirecting to <a href="${appUrl}">政治アーケード</a>...</p>
 </body>
 </html>
     `;

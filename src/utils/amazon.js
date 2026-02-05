@@ -3,7 +3,8 @@
 export const AMAZON_ASSOCIATE_TAG = 'bassarijpgo-22';
 
 export const getAmazonProductUrl = (asin) => {
-    return `https://www.amazon.co.jp/dp/${asin}?tag=${AMAZON_ASSOCIATE_TAG}&linkCode=ogi&th=1&psc=1`;
+    // シンプルな形式に変更
+    return `https://www.amazon.co.jp/dp/${asin}?tag=${AMAZON_ASSOCIATE_TAG}`;
 };
 
 export const getAmazonSearchUrl = (keyword) => {

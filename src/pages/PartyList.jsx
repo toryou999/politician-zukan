@@ -77,7 +77,7 @@ function PartyList() {
         <div className="party-list-page">
             <SEO />
             <header className="list-header">
-                <h1>政治家図鑑</h1>
+                <h1>政治アーケード</h1>
                 <p className="list-subtitle">政治家の立ち位置が一瞬でわかる</p>
                 <p className="update-notice">※ 掲載メンバーは随時更新中です！</p>
             </header>
