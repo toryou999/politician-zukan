@@ -311,6 +311,10 @@ ol {
   background-color: #FFB84D;
 }
 
+.party-badge.japan-first {
+  background-color: #b71c1c;
+}
+
 .update-notice {
   font-size: 0.85rem;
   color: #e65100;

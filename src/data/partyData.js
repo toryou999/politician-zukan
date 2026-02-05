@@ -130,6 +130,16 @@ export const partyData = [
         position: { x: -10, y: -20 },
     },
     {
+        id: 'japan-first',
+        name: '日本第一党',
+        shortName: '第一',
+        leaderId: 'sakurai-makoto', // 桜井誠（初代党首・実質的リーダーとして扱う）
+        color: '#b71c1c',
+        description: '日本第一主義を掲げる。',
+        className: 'japan-first',
+        position: { x: 90, y: -90 },
+    },
+    {
         id: 'independent',
         name: '無所属',
         shortName: '無所',
@@ -163,6 +173,7 @@ export function getPartyIdByName(name) {
         '社会民主党': 'sdp',
         '減税日本・ゆうこく連合': 'genzei',
         '減税日本': 'genzei',
+        '日本第一党': 'japan-first',
         '無所属': 'independent',
     };
     return map[name] || 'independent';
