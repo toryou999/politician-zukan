@@ -7,6 +7,8 @@ import PoliticianCard from '../components/PoliticianCard';
 import SEO from '../components/SEO';
 import AdsCard from '../components/AdsCard';
 
+import { getPartytextColor } from '../utils/colors';
+
 function PartyCard({ party }) {
     const leader = party.leaderId ? getPoliticianById(party.leaderId) : null;
     const [leaderPhotoUrl, setLeaderPhotoUrl] = useState(null);
@@ -16,6 +18,8 @@ function PartyCard({ party }) {
             getWikimediaImageUrl(leader.wikimediaFile).then(setLeaderPhotoUrl);
         }
     }, [leader]);
+
+    const textColor = getPartytextColor(party.color, party.id);
 
     return (
         <Link to={`/party/${party.id}`} className={`party-card ${party.className}`} style={{ '--party-color': party.color }}>
@@ -29,7 +33,7 @@ function PartyCard({ party }) {
                     {leaderPhotoUrl ? (
                         <img src={leaderPhotoUrl} alt={`${party.name}代表`} />
                     ) : (
-                        <div className="leader-placeholder" style={{ backgroundColor: party.color }}>
+                        <div className="leader-placeholder" style={{ backgroundColor: party.color, color: textColor }}>
                             <span>{leader ? leader.name[0] : party.shortName[0]}</span>
                         </div>
                     )}
