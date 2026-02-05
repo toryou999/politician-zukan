@@ -137,6 +137,12 @@ export default function MyCabinet() {
 
     // ... (rows definitions)
 
+    const row1 = getPositionsByRow(1);
+    const row2 = getPositionsByRow(2);
+    const row3 = getPositionsByRow(3);
+    const row4 = getPositionsByRow(4);
+    const row5 = getPositionsByRow(5);
+
     return (
         <div className="container my-cabinet-page">
             <SEO
