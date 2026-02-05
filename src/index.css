@@ -320,10 +320,86 @@ ol {
   background-color: #fce4ec;
 }
 
-/* ===== タブ切り替え ===== */
+/* ===== 共通ヘッダー ===== */
+.site-header {
+  background-color: #fff;
+  border-bottom: 1px solid var(--color-border);
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.login-btn {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--color-accent);
+  text-decoration: none;
+  padding: 6px 12px;
+  border: 1px solid var(--color-accent);
+  border-radius: 20px;
+  transition: all 0.2s;
+}
+
+.login-btn:hover {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  padding: 6px 12px;
+  background-color: var(--color-bg);
+  border-radius: 20px;
+}
+
+.user-icon {
+  font-size: 1.1rem;
+}
+
+/* ===== 政党マップ ===== */
+.party-position-map-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--color-border);
+}
+
 .view-tabs {
   display: flex;
-  justify_content: center;
+  justify-content: center;
   gap: 10px;
   margin-bottom: 24px;
 }
@@ -364,11 +440,6 @@ ol {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-display: inline-block;
-padding: 4px 12px;
-border-radius: 20px;
 }
 
 /* ===== 政党マップ ===== */
