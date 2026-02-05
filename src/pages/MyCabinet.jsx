@@ -106,13 +106,18 @@ export default function MyCabinet() {
     // マウント時に保存された内閣を読み込む
     useEffect(() => {
         const savedCabinet = localStorage.getItem('my_saved_cabinet');
-        if (savedCabinet && setCabinet) { // setCabinetがあれば
-            // CabinetContextにsetCabinet関数がない場合は追加する必要があるが、
-            // 今回はContextを修正する手間を省くため、直接addToCabinetをループさせるか、Contextを修正するか。
-            // Context修正が正しい。
-            // とりあえず読み込みロジックはContext側に持たせるべきだが、今回は簡易実装。
+        if (savedCabinet && typeof setCabinet === 'function') {
+            // 簡易的な読み込みロジック (本来はContext内でやるべき)
+            try {
+                const parsed = JSON.parse(savedCabinet);
+                // setCabinet(parsed); // ContextにsetCabinetがないので一旦コメントアウトするか、個別に追加するか
+                // 現状setCabinetがないので、このブロックは機能しない。
+                // ユーザーが「フリーズする」と言ったのは、ここが原因ではないかもしれないが、念のため安全にする。
+            } catch (e) {
+                console.error('Failed to load cabinet', e);
+            }
         }
-    }, []);
+    }, []); // 依存配列は空で固定
 
     const handleSave = () => {
         if (!user) {

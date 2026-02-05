@@ -50,7 +50,7 @@ import PartyPositionMap from '../components/PartyPositionMap';
 
 function PartyList() {
     const [searchQuery, setSearchQuery] = useState('');
-    const [viewMode, setViewMode] = useState('map'); // 'map' or 'list'
+    const [viewMode, setViewMode] = useState('list'); // デフォルトはリスト'map' or 'list'
 
     const filteredPoliticians = useMemo(() => {
         if (!searchQuery.trim()) {
@@ -126,16 +126,16 @@ function PartyList() {
                 {!searchQuery && (
                     <div className="view-tabs">
                         <button
-                            className={`view-tab ${viewMode === 'map' ? 'active' : ''}`}
-                            onClick={() => setViewMode('map')}
-                        >
-                            🗺️ 立ち位置マップ
-                        </button>
-                        <button
                             className={`view-tab ${viewMode === 'list' ? 'active' : ''}`}
                             onClick={() => setViewMode('list')}
                         >
                             📋 政党リスト
+                        </button>
+                        <button
+                            className={`view-tab ${viewMode === 'map' ? 'active' : ''}`}
+                            onClick={() => setViewMode('map')}
+                        >
+                            🗺️ 立ち位置マップ
                         </button>
                     </div>
                 )}
