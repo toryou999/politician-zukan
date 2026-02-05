@@ -147,6 +147,7 @@ export default function MyCabinet() {
     }, [user, setCabinet]); // setCabinetを依存配列に追加
 
     const handleSave = async () => {
+<<<<<<< HEAD
         if (!user) {
             if (window.confirm('保存するにはログイン（無料）が必要です。ログインページへ移動しますか？')) {
                 // login({ name: 'ゲスト' }); // 簡易ログインフローへ（後で実装）
@@ -155,6 +156,14 @@ export default function MyCabinet() {
                 localStorage.setItem('my_saved_cabinet', JSON.stringify(cabinet));
                 setSaveMessage('（一時保存）内閣を保存しました！');
                 setTimeout(() => setSaveMessage(''), 3000);
+=======
+        // ゲストユーザー（匿名）または未ログインの場合は登録を促す
+        if (!user || user.isGuest) {
+            if (window.confirm('保存するにはアカウント登録（無料）が必要です。登録ページへ移動しますか？')) {
+                // 現在の内閣データを一時保存して、登録後に復元できるようにする（今回は簡易的にlocalStorageのみ）
+                localStorage.setItem('my_saved_cabinet', JSON.stringify(cabinet));
+                window.location.href = '/signup';
+>>>>>>> develop
             }
             return;
         }
@@ -165,10 +174,14 @@ export default function MyCabinet() {
                 .upsert({
                     user_id: user.id,
                     data: cabinet,
+<<<<<<< HEAD
                     // share_idは自動生成されるが、既存の更新なら維持したい（今回は毎回新規作成または最新1件更新などの設計次第）
                     // シンプルに毎回新規作成（履歴として残る）にするか、user_idで1つにするか。
                     // 今回は「履歴に残す」方針でinsertにする。
                 }, { onConflict: 'user_id' }) // user_idが同じ場合は更新
+=======
+                }, { onConflict: 'user_id' })
+>>>>>>> develop
                 .select()
                 .single();
 
