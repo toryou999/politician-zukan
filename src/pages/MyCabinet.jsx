@@ -129,9 +129,36 @@ export default function MyCabinet() {
         setTimeout(() => setSaveMessage(''), 3000);
     };
 
-    // ... (handleReset, handleSlotClick, handleSelectPoliticianは変更なし)
+    const handleReset = () => {
+        if (window.confirm('内閣をリセットしてもよろしいですか？')) {
+            resetCabinet();
+        }
+    };
 
-    // ... (share functions)
+    const handleSlotClick = (position) => {
+        setSelectingPosition(position);
+    };
+
+    const handleSelectPolitician = (politicianId) => {
+        if (selectingPosition) {
+            addToCabinet(selectingPosition.id, politicianId);
+            setSelectingPosition(null);
+        }
+    };
+
+    const handleShareX = () => {
+        const text = `私の最強の内閣が完成しました！ #政治家図鑑 #マイベスト内閣`;
+        const url = window.location.href;
+        const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+        window.open(twitterUrl, '_blank');
+    };
+
+    const handleCopyUrl = () => {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            setShowCopied(true);
+            setTimeout(() => setShowCopied(false), 2000);
+        });
+    };
 
     // ... (rows definitions)
 
