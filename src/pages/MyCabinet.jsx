@@ -94,6 +94,8 @@ function PoliticianSelectModal({ position, onClose, onSelect }) {
 
 import { useAuth } from '../contexts/AuthContext'; // 追加
 
+import { supabase } from '../lib/supabase'; // 追加
+
 // ... (PoliticianSelectModalなどは変更なし)
 
 export default function MyCabinet() {
@@ -102,27 +104,94 @@ export default function MyCabinet() {
     const [selectingPosition, setSelectingPosition] = useState(null);
     const [showCopied, setShowCopied] = useState(false);
     const [saveMessage, setSaveMessage] = useState(''); // 保存完了メッセージ
+    const [shareId, setShareId] = useState(null); // シェア用ID
+    const [loading, setLoading] = useState(false); // 読み込み中フラグ
 
-    // マウント時に保存された内閣を読み込む (Contextに任せるため不要だが、念のため既存ロジックは無効化)
+    // マウント時に保存された内閣を読み込む
     useEffect(() => {
-        // Contextが正となるため、ここでの上書きは廃止
-    }, []);
+        const searchParams = new URLSearchParams(window.location.search);
+        const shareIdParam = searchParams.get('id');
 
-    const handleSave = () => {
+        if (shareIdParam) {
+            // シェアされた内閣を読み込む
+            setLoading(true); // MyCabinetコンポーネント内にloading状態を追加する必要あり
+            supabase
+                .from('cabinets')
+                .select('data, share_id') // share_idも取得
+                .eq('share_id', shareIdParam)
+                .single()
+                .then(({ data, error }) => {
+                    if (data && data.data) {
+                        setCabinet(data.data);
+                        setShareId(data.share_id); // 読み込んだshare_idをセット
+                        setSaveMessage('シェアされた内閣を読み込みました');
+                    } else if (error) {
+                        console.error('Error loading shared cabinet:', error);
+                    }
+                    setLoading(false);
+                });
+        } else {
+            // ローカル保存または自分の最新内閣を読み込む（現状維持+Supabase読み込み）
+            // 簡易的にローカルストレージ優先、なければSupabaseから自分の最新を取得などのロジックが良いが
+            // いったんローカルストレージ互換を維持
+            const savedCabinet = localStorage.getItem('my_saved_cabinet');
+            if (savedCabinet && typeof setCabinet === 'function') {
+                try {
+                    const parsed = JSON.parse(savedCabinet);
+                    setCabinet(parsed);
+                } catch (e) {
+                    console.error('Failed to load cabinet', e);
+                }
+            }
+        }
+    }, [user, setCabinet]); // setCabinetを依存配列に追加
+
+    const handleSave = async () => {
         if (!user) {
             if (window.confirm('保存するにはログイン（無料）が必要です。ログインページへ移動しますか？')) {
-                window.location.href = '/login';
+                // login({ name: 'ゲスト' }); // 簡易ログインフローへ（後で実装）
+                alert('すみません、ログイン画面はまだありません！このまま保存します（ローカル保存のみ）。');
+                // 一旦ローカル保存
+                localStorage.setItem('my_saved_cabinet', JSON.stringify(cabinet));
+                setSaveMessage('（一時保存）内閣を保存しました！');
+                setTimeout(() => setSaveMessage(''), 3000);
             }
             return;
         }
-        localStorage.setItem('my_saved_cabinet', JSON.stringify(cabinet));
-        setSaveMessage('内閣を保存しました！');
-        setTimeout(() => setSaveMessage(''), 3000);
+
+        try {
+            const { data, error } = await supabase
+                .from('cabinets')
+                .upsert({
+                    user_id: user.id,
+                    data: cabinet,
+                    // share_idは自動生成されるが、既存の更新なら維持したい（今回は毎回新規作成または最新1件更新などの設計次第）
+                    // シンプルに毎回新規作成（履歴として残る）にするか、user_idで1つにするか。
+                    // 今回は「履歴に残す」方針でinsertにする。
+                }, { onConflict: 'user_id' }) // user_idが同じ場合は更新
+                .select()
+                .single();
+
+            if (error) throw error;
+
+            // シェア用IDを保持
+            setShareId(data.share_id);
+
+            // ローカルにも一応
+            localStorage.setItem('my_saved_cabinet', JSON.stringify(cabinet));
+            setSaveMessage('クラウドに保存しました！');
+            setTimeout(() => setSaveMessage(''), 3000);
+
+        } catch (e) {
+            console.error('Save failed', e);
+            alert('保存に失敗しました');
+        }
     };
 
     const handleReset = () => {
         if (window.confirm('内閣をリセットしてもよろしいですか？')) {
             resetCabinet();
+            setShareId(null); // リセット時にシェアIDもクリア
         }
     };
 
@@ -139,13 +208,15 @@ export default function MyCabinet() {
 
     const handleShareX = () => {
         const text = `私の最強の内閣が完成しました！ #政治家図鑑 #マイベスト内閣`;
-        const url = window.location.href;
+        // shareIdがあればそれを使う、なければ現在のURL
+        const url = shareId ? `${window.location.origin}/my-cabinet?id=${shareId}` : window.location.href;
         const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
         window.open(twitterUrl, '_blank');
     };
 
     const handleCopyUrl = () => {
-        navigator.clipboard.writeText(window.location.href).then(() => {
+        const url = shareId ? `${window.location.origin}/my-cabinet?id=${shareId}` : window.location.href;
+        navigator.clipboard.writeText(url).then(() => {
             setShowCopied(true);
             setTimeout(() => setShowCopied(false), 2000);
         });
