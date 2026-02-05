@@ -110,9 +110,7 @@ export default function MyCabinet() {
             // 簡易的な読み込みロジック (本来はContext内でやるべき)
             try {
                 const parsed = JSON.parse(savedCabinet);
-                // setCabinet(parsed); // ContextにsetCabinetがないので一旦コメントアウトするか、個別に追加するか
-                // 現状setCabinetがないので、このブロックは機能しない。
-                // ユーザーが「フリーズする」と言ったのは、ここが原因ではないかもしれないが、念のため安全にする。
+                setCabinet(parsed);
             } catch (e) {
                 console.error('Failed to load cabinet', e);
             }
