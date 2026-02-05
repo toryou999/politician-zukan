@@ -117,16 +117,41 @@ export default function MyCabinet() {
         }
     }, []); // 依存配列は空で固定
 
-    const handleSave = () => {
-        if (!user) {
-            if (window.confirm('保存するにはログイン（無料）が必要です。ログインページへ移動しますか？')) {
-                window.location.href = '/login';
+    const handleSave = async () => {
+        // ゲストユーザー（匿名）または未ログインの場合は登録を促す
+        if (!user || user.isGuest) {
+            if (window.confirm('保存するにはアカウント登録（無料）が必要です。登録ページへ移動しますか？')) {
+                // 現在の内閣データを一時保存して、登録後に復元できるようにする（今回は簡易的にlocalStorageのみ）
+                localStorage.setItem('my_saved_cabinet', JSON.stringify(cabinet));
+                window.location.href = '/signup';
             }
             return;
         }
-        localStorage.setItem('my_saved_cabinet', JSON.stringify(cabinet));
-        setSaveMessage('内閣を保存しました！');
-        setTimeout(() => setSaveMessage(''), 3000);
+
+        try {
+            const { data, error } = await supabase
+                .from('cabinets')
+                .upsert({
+                    user_id: user.id,
+                    data: cabinet,
+                }, { onConflict: 'user_id' })
+                .select()
+                .single();
+
+            if (error) throw error;
+
+            // シェア用IDを保持
+            setShareId(data.share_id);
+
+            // ローカルにも一応
+            localStorage.setItem('my_saved_cabinet', JSON.stringify(cabinet));
+            setSaveMessage('クラウドに保存しました！');
+            setTimeout(() => setSaveMessage(''), 3000);
+
+        } catch (e) {
+            console.error('Save failed', e);
+            alert('保存に失敗しました');
+        }
     };
 
     const handleReset = () => {

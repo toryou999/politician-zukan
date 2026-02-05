@@ -12,9 +12,10 @@ import Terms from './pages/Terms'
 import Privacy from './pages/Privacy'
 import Footer from './components/Footer'
 import Header from './components/Header' // 新規追加
-import Login from './pages/Login' // 新規追加
-import MyPage from './pages/MyPage' // 新規追加
-import { AuthProvider } from './contexts/AuthContext' // 新規追加
+import Login from './pages/Login'
+import Signup from './pages/Signup' // 新規追加
+import MyPage from './pages/MyPage'
+import { AuthProvider } from './contexts/AuthContext'
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path="/terms" element={<Terms />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} /> {/* 新規追加 */}
             <Route path="/mypage" element={<MyPage />} />
           </Routes>
           <CabinetFab />
