@@ -81,6 +81,7 @@ export function CabinetProvider({ children }) {
             selectingPolitician,
             openPositionSelect,
             closePositionSelect,
+            setCabinet, // 追加
         }}>
             {children}
         </CabinetContext.Provider>
