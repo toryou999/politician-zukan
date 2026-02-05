@@ -1657,7 +1657,8 @@ ol {
 }
 
 /* ===== レスポンシブ - マイ内閣 ===== */
-@media (max-width: 480px) {
+/* ===== レスポンシブ - マイ内閣 ===== */
+@media (max-width: 600px) {
   .cabinet-fab {
     padding: 10px 16px;
     bottom: 16px;
@@ -1669,35 +1670,87 @@ ol {
   }
 
   .cabinet-formation {
-    padding: 16px;
-    gap: 12px;
+    padding: 12px 8px;
+    /* パディング縮小 */
+    gap: 6px;
+    /* ギャップ縮小 */
   }
 
+  .formation-row {
+    gap: 4px;
+    /* 横並びギャップ縮小 */
+  }
+
+  /* コネクタも短く */
+  .formation-connector {
+    height: 8px;
+  }
+
+  /* スロット最適化 - 極限まで詰める */
   .cabinet-slot {
     min-width: 55px;
-    padding: 8px;
+    padding: 6px 2px;
+    border-radius: 8px;
   }
 
   .cabinet-slot.large {
-    min-width: 75px;
+    min-width: 80px;
+    padding: 8px 4px;
   }
 
   .cabinet-slot.medium {
     min-width: 65px;
+    padding: 8px 4px;
   }
 
+  /* 写真サイズ縮小 */
   .slot-photo {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
+    margin-bottom: 2px;
+    border-width: 1.5px;
   }
 
   .cabinet-slot.large .slot-photo {
-    width: 52px;
-    height: 52px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .cabinet-slot.medium .slot-photo {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* フォントサイズ縮小 */
+  .slot-position-name {
+    font-size: 0.6rem;
+    /* 10px相当 */
+    margin-bottom: 0;
+  }
+
+  .slot-politician-name {
+    font-size: 0.65rem;
+    line-height: 1.1;
+    margin-top: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    padding: 0 1px;
+  }
+
+  .slot-empty-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
   }
 
   .position-grid {
     grid-template-columns: 1fr;
+  }
+
+  .cabinet-header h1 {
+    font-size: 1.5rem;
   }
 }
 
