@@ -93,6 +93,26 @@ export function AuthProvider({ children }) {
         return data;
     };
 
+    // パスワードリセット（メール送信）
+    const resetPassword = async (email) => {
+        // 開発環境と本番環境でリダイレクト先を振り分ける（VercelのURLなどが環境変数にあればそれを使うが、今回はwindow.location.originで簡易対応）
+        const redirectTo = `${window.location.origin}/update-password`;
+        const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
+            redirectTo: redirectTo,
+        });
+        if (error) throw error;
+        return data;
+    };
+
+    // パスワード更新（ログイン中、またはリセットリンクから飛んできた後）
+    const updatePassword = async (newPassword) => {
+        const { data, error } = await supabase.auth.updateUser({
+            password: newPassword
+        });
+        if (error) throw error;
+        return data;
+    };
+
     // 新規登録（メールアドレス）
     const signUp = async (email, password, name) => {
         const { data, error } = await supabase.auth.signUp({
@@ -119,6 +139,8 @@ export function AuthProvider({ children }) {
         login,
         signIn,
         signUp,
+        resetPassword,
+        updatePassword,
         logout,
         loading
     };
