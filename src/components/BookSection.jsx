@@ -1,4 +1,4 @@
-import { getAmazonProductUrl } from '../utils/amazon';
+import { getAmazonSearchUrl } from '../utils/amazon';
 
 function BookSection({ books }) {
     if (!books || books.length === 0) return null;
@@ -11,7 +11,7 @@ function BookSection({ books }) {
                         <div className="book-info">
                             <h3 className="book-title">{book.title}</h3>
                             <a
-                                href={getAmazonProductUrl(book.asin)}
+                                href={getAmazonSearchUrl(book.title)}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="amazon-btn"
