@@ -75,13 +75,37 @@ export function AuthProvider({ children }) {
     }, []);
 
     // 擬似ログイン（今は使わないが互換性のため残す）
+    // 擬似ログイン（今は使わないが互換性のため残す・匿名ユーザー情報の更新用）
     const login = async (userData) => {
-        // 手動で名前などを設定したい場合用
         if (user) {
-            // 既に匿名ログイン済みならメタデータを更新するなど（今回は省略）
             const updatedUser = { ...user, ...userData };
             setUser(updatedUser);
         }
+    };
+
+    // ログイン（メールアドレス）
+    const signIn = async (email, password) => {
+        const { data, error } = await supabase.auth.signInWithPassword({
+            email,
+            password,
+        });
+        if (error) throw error;
+        return data;
+    };
+
+    // 新規登録（メールアドレス）
+    const signUp = async (email, password, name) => {
+        const { data, error } = await supabase.auth.signUp({
+            email,
+            password,
+            options: {
+                data: {
+                    name: name,
+                },
+            },
+        });
+        if (error) throw error;
+        return data;
     };
 
     const logout = async () => {
@@ -93,6 +117,8 @@ export function AuthProvider({ children }) {
     const value = {
         user,
         login,
+        signIn,
+        signUp,
         logout,
         loading
     };
