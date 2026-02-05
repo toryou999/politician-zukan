@@ -46,8 +46,11 @@ function PartyCard({ party }) {
     );
 }
 
+import PartyPositionMap from '../components/PartyPositionMap';
+
 function PartyList() {
     const [searchQuery, setSearchQuery] = useState('');
+    const [viewMode, setViewMode] = useState('map'); // 'map' or 'list'
 
     const filteredPoliticians = useMemo(() => {
         if (!searchQuery.trim()) {
@@ -71,7 +74,7 @@ function PartyList() {
     }, [searchQuery]);
 
     return (
-        <div className="container">
+        <div className="party-list-page">
             <SEO />
             <header className="list-header">
                 <h1>政治家図鑑</h1>
@@ -81,47 +84,90 @@ function PartyList() {
 
             <AdsCard slot="top-page" />
 
-            <div className="search-container">
-                <input
-                    type="text"
-                    className="search-input"
-                    placeholder="名前・政党・選挙区で検索..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                />
-                {searchQuery && (
+            <div className="container">
+                {/* タブ切り替え */}
+                <div className="view-tabs">
                     <button
-                        className="search-clear"
-                        onClick={() => setSearchQuery('')}
-                        aria-label="検索をクリア"
+                        className={`view-tab ${viewMode === 'map' ? 'active' : ''}`}
+                        onClick={() => setViewMode('map')}
                     >
-                        ✕
+                        🗾 立ち位置マップ
                     </button>
-                )}
-            </div>
+                    <button
+                        className={`view-tab ${viewMode === 'list' ? 'active' : ''}`}
+                        onClick={() => setViewMode('list')}
+                    >
+                        📋 政党リスト
+                    </button>
+                </div>
 
-            {searchQuery ? (
-                <div className="search-results">
-                    {filteredPoliticians.length === 0 ? (
-                        <div className="no-results">
-                            <p>「{searchQuery}」に一致する政治家が見つかりませんでした。</p>
-                        </div>
-                    ) : (
-                        <div className="politician-grid">
-                            {filteredPoliticians.map(politician => (
-                                <PoliticianCard key={politician.id} politician={politician} />
-                            ))}
-                        </div>
+                {viewMode === 'map' && (
+                    <div className="fade-in">
+                        <PartyPositionMap parties={partyData} />
+                    </div>
+                )}
+
+                {viewMode === 'list' && !searchQuery && (
+                    <div className="party-grid fade-in">
+                        {partyData.map(party => (
+                            <PartyCard key={party.id} party={party} />
+                        ))}
+                    </div>
+                )}
+
+                <h2 className="section-title" style={{ marginTop: '40px' }}>政治家を探す</h2>
+                <div className="search-container">
+                    <input
+                        type="text"
+                        className="search-input"
+                        placeholder="名前・政党・選挙区で検索..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                    />
+                    {searchQuery && (
+                        <button
+                            className="search-clear"
+                            onClick={() => setSearchQuery('')}
+                            aria-label="検索をクリア"
+                        >
+                            ✕
+                        </button>
                     )}
                 </div>
-            ) : (
-                <div className="party-grid">
-                    {partyData.map(party => (
-                        <PartyCard key={party.id} party={party} />
-                    ))}
-                </div>
-            )}
+
+                {searchQuery && (
+                    onClick = {() => setSearchQuery('')}
+                aria-label="検索をクリア"
+                    >
+                ✕
+            </button>
+                )}
         </div>
+
+            {
+        searchQuery ? (
+            <div className="search-results">
+                {filteredPoliticians.length === 0 ? (
+                    <div className="no-results">
+                        <p>「{searchQuery}」に一致する政治家が見つかりませんでした。</p>
+                    </div>
+                ) : (
+                    <div className="politician-grid">
+                        {filteredPoliticians.map(politician => (
+                            <PoliticianCard key={politician.id} politician={politician} />
+                        ))}
+                    </div>
+                )}
+            </div>
+        ) : (
+            <div className="party-grid">
+                {partyData.map(party => (
+                    <PartyCard key={party.id} party={party} />
+                ))}
+            </div>
+        )
+    }
+        </div >
     );
 }
 

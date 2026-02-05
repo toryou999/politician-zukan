@@ -317,10 +317,91 @@ ol {
   /* オレンジ系 */
   font-weight: bold;
   margin-top: 8px;
-  background-color: #fff3e0;
-  display: inline-block;
-  padding: 4px 12px;
-  border-radius: 20px;
+  background-color: #fce4ec;
+}
+
+/* ===== タブ切り替え ===== */
+.view-tabs {
+  display: flex;
+  justify_content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.view-tab {
+  padding: 10px 20px;
+  border-radius: 24px;
+  border: 1px solid var(--color-border);
+  background: white;
+  font-weight: bold;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.view-tab:hover {
+  background: #f5f5f5;
+}
+
+.view-tab.active {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+display: inline-block;
+padding: 4px 12px;
+border-radius: 20px;
+}
+
+/* ===== 政党マップ ===== */
+.party-position-map-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--color-border);
+}
+
+.chart-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.party-plot {
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.party-plot:hover {
+  transform: scale(1.2);
+}
+
+.map-help-text {
+  text-align: center;
+  color: #888;
+  margin-top: 8px;
 }
 
 .party-badge.education {

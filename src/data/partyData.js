@@ -7,6 +7,7 @@ export const partyData = [
         color: '#d32f2f',
         description: '伝統と創造、責任ある政治。',
         className: 'ldp',
+        position: { x: 40, y: -10 },
     },
     {
         id: 'cdp',
@@ -16,6 +17,7 @@ export const partyData = [
         color: '#1976d2',
         description: '人へ 未来へ まっとうな政治。',
         className: 'cdp',
+        position: { x: -40, y: 40 },
     },
     {
         id: 'komeito',
@@ -25,6 +27,7 @@ export const partyData = [
         color: '#f06292',
         description: '小さな声を、聴く力。',
         className: 'komeito',
+        position: { x: 0, y: 0 },
     },
     {
         id: 'ishin',
@@ -34,6 +37,7 @@ export const partyData = [
         color: '#4caf50',
         description: '身を切る改革、実のある改革。',
         className: 'ishin',
+        position: { x: 80, y: 60 },
     },
     {
         id: 'dpp',
@@ -43,6 +47,7 @@ export const partyData = [
         color: '#fbc02d',
         description: '対決より解決。手取りを増やす。',
         className: 'dpp',
+        position: { x: 40, y: 30 },
     },
     {
         id: 'jcp',
@@ -52,6 +57,7 @@ export const partyData = [
         color: '#7b1fa2',
         description: '国民が主人公。',
         className: 'jcp',
+        position: { x: -80, y: 80 },
     },
     {
         id: 'reiwa',
@@ -61,6 +67,7 @@ export const partyData = [
         color: '#e91e63',
         description: '何があっても心配するな。',
         className: 'reiwa',
+        position: { x: -50, y: 50 },
     },
     {
         id: 'sanseito',
@@ -70,6 +77,7 @@ export const partyData = [
         color: '#ff9800',
         description: '日本をなめるな。',
         className: 'sanseito',
+        position: { x: -10, y: -70 },
     },
     {
         id: 'hoshuto',
@@ -79,6 +87,7 @@ export const partyData = [
         color: '#0d47a1',
         description: '日本を豊かに、強く。',
         className: 'hoshuto',
+        position: { x: 30, y: -80 },
     },
     {
         id: 'mirai',
@@ -88,6 +97,7 @@ export const partyData = [
         color: '#00bcd4',
         description: 'テクノロジーで民主主義をアップデート。',
         className: 'mirai',
+        position: { x: 20, y: 40 },
     },
     {
         id: 'chudo',
@@ -97,6 +107,7 @@ export const partyData = [
         color: '#009688',
         description: '穏健な改革と対話。',
         className: 'chudo',
+        position: { x: -40, y: 80 },
     },
     {
         id: 'sdp',
@@ -106,6 +117,7 @@ export const partyData = [
         color: '#03a9f4',
         description: 'がんこに平和、くらし一番。',
         className: 'sdp',
+        position: { x: -60, y: 80 },
     },
     {
         id: 'genzei',
@@ -115,6 +127,7 @@ export const partyData = [
         color: '#FF6F00',
         description: '減税こそ最大の経済対策。',
         className: 'genzei',
+        position: { x: -10, y: -20 },
     },
     {
         id: 'independent',
