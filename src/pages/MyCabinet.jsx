@@ -110,7 +110,9 @@ export default function MyCabinet() {
             // 簡易的な読み込みロジック (本来はContext内でやるべき)
             try {
                 const parsed = JSON.parse(savedCabinet);
-                setCabinet(parsed);
+                if (parsed && typeof parsed === 'object') {
+                    setCabinet(parsed);
+                }
             } catch (e) {
                 console.error('Failed to load cabinet', e);
             }

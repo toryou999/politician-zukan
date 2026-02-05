@@ -10,7 +10,8 @@ export function CabinetProvider({ children }) {
     const [cabinet, setCabinet] = useState(() => {
         try {
             const saved = localStorage.getItem(STORAGE_KEY);
-            return saved ? JSON.parse(saved) : {};
+            const parsed = saved ? JSON.parse(saved) : {};
+            return (parsed && typeof parsed === 'object') ? parsed : {};
         } catch {
             return {};
         }
@@ -21,13 +22,15 @@ export function CabinetProvider({ children }) {
 
     // localStorageに保存
     useEffect(() => {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(cabinet));
+        if (cabinet && typeof cabinet === 'object') {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(cabinet));
+        }
     }, [cabinet]);
 
     // 内閣にメンバーを追加
     const addToCabinet = (positionId, politicianId) => {
         setCabinet(prev => ({
-            ...prev,
+            ...(prev || {}),
             [positionId]: politicianId,
         }));
     };
@@ -35,7 +38,7 @@ export function CabinetProvider({ children }) {
     // 内閣からメンバーを削除
     const removeFromCabinet = (positionId) => {
         setCabinet(prev => {
-            const next = { ...prev };
+            const next = { ...(prev || {}) };
             delete next[positionId];
             return next;
         });
@@ -48,6 +51,7 @@ export function CabinetProvider({ children }) {
 
     // 特定の議員がどのポジションにいるか取得
     const getPoliticianPosition = (politicianId) => {
+        if (!cabinet) return null;
         for (const [positionId, pId] of Object.entries(cabinet)) {
             if (pId === politicianId) {
                 return positionId;
@@ -57,7 +61,7 @@ export function CabinetProvider({ children }) {
     };
 
     // 埋まっているポジション数
-    const filledCount = Object.keys(cabinet).length;
+    const filledCount = cabinet ? Object.keys(cabinet).length : 0;
     const totalPositions = cabinetPositions.length;
 
     // ポジション選択モーダルを開く（議員IDを渡す）
