@@ -135,13 +135,7 @@ function PartyList() {
                     )}
                 </div>
 
-                {searchQuery && (
-                    onClick = {() => setSearchQuery('')}
-                aria-label="検索をクリア"
-                    >
-                ✕
-            </button>
-                )}
+            </div>
         </div>
 
             {
@@ -159,13 +153,43 @@ function PartyList() {
                     </div>
                 )}
             </div>
-        ) : (
+        ) : viewMode === 'list' && (
             <div className="party-grid">
                 {partyData.map(party => (
                     <PartyCard key={party.id} party={party} />
                 ))}
             </div>
         )
+    }
+        </div >
+    );
+}
+        </div >
+
+{
+    searchQuery?(
+            <div className = "search-results" >
+        {
+            filteredPoliticians.length === 0 ? (
+                <div className="no-results">
+                    <p>「{searchQuery}」に一致する政治家が見つかりませんでした。</p>
+                </div>
+            ) : (
+                <div className="politician-grid">
+                    {filteredPoliticians.map(politician => (
+                        <PoliticianCard key={politician.id} politician={politician} />
+                    ))}
+                </div>
+            )
+        }
+            </div>
+        ) : (
+    <div className="party-grid">
+        {partyData.map(party => (
+            <PartyCard key={party.id} party={party} />
+        ))}
+    </div>
+)
     }
         </div >
     );
