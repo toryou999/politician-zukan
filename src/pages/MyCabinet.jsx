@@ -210,15 +210,26 @@ export default function MyCabinet() {
 
     const handleShareX = () => {
         const text = `私の最強の内閣が完成しました！ #政治家図鑑 #マイベスト内閣`;
-        // shareIdがあればそれを使う、なければ現在のURL
-        const url = shareId ? `${window.location.origin}/my-cabinet?id=${shareId}` : window.location.href;
-        const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+        // shareIdがあればそれを使う、なければ現在のURL(ただしシェアロード直後はそのID)
+        const urlToShare = shareId ? `${window.location.origin}/my-cabinet?id=${shareId}` : window.location.href;
+
+        // 保存していない場合のアラート（オプショナル）
+        if (!shareId && !loadedFromShare) {
+            if (!confirm('まだ保存されていません。保存してからシェアしますか？（キャンセルでそのままシェア）')) {
+                // そのままシェア
+            } else {
+                handleSave();
+                return;
+            }
+        }
+
+        const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(urlToShare)}`;
         window.open(twitterUrl, '_blank');
     };
 
     const handleCopyUrl = () => {
-        const url = shareId ? `${window.location.origin}/my-cabinet?id=${shareId}` : window.location.href;
-        navigator.clipboard.writeText(url).then(() => {
+        const urlToShare = shareId ? `${window.location.origin}/my-cabinet?id=${shareId}` : window.location.href;
+        navigator.clipboard.writeText(urlToShare).then(() => {
             setShowCopied(true);
             setTimeout(() => setShowCopied(false), 2000);
         });
