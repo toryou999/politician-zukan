@@ -62,9 +62,8 @@ export default async function handler(req) {
         if (!pol) return null;
         if (pol.image) return pol.image;
         if (pol.wikimediaFile) {
-             // getWikimediaImageUrlロジックを簡易的に再実装（import依存を減らすため）
-             // MD5ハッシュ化などが必要なのでimportした方が無難だが、Edgeで動くか？
-             // URLエンコードだけでいけるパターンのみ対応、またはデフォルト画像
+             // WikimediaのSpecial:FilePathなどを使って直接画像URLを取得
+             // encodeURIComponentはファイル名のみにかける
              return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(pol.wikimediaFile)}?width=300`;
         }
 return null;
@@ -82,8 +81,8 @@ return new ImageResponse(
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                backgroundColor: '#f0f9ff',
-                backgroundImage: 'radial-gradient(#cbd5e1 1px, transparent 1px)',
+                backgroundColor: '#fff',
+                backgroundImage: 'radial-gradient(#e5e7eb 1px, transparent 1px)',
                 backgroundSize: '40px 40px',
                 fontFamily: '"Noto Sans JP", sans-serif',
             }}
@@ -92,38 +91,53 @@ return new ImageResponse(
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                backgroundColor: 'white',
+                justifyContent: 'center',
+                backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(0,0,0,0.1)',
                 padding: '40px 80px',
-                borderRadius: '20px',
-                boxShadow: '0 20px 50px rgba(0,0,0,0.1)',
-                border: '4px solid #fbbf24'
+                borderRadius: '30px',
+                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+                maxWidth: '900px',
             }}>
-                <div style={{ fontSize: 32, fontWeight: 'bold', color: '#64748b', marginBottom: 10 }}>MY BEST CABINET</div>
-                <div style={{ fontSize: 64, fontWeight: 900, color: '#1e293b', marginBottom: 30 }}>最強の内閣、完成。</div>
+                <div style={{ fontSize: 32, fontWeight: 'bold', color: '#64748b', marginBottom: 10, letterSpacing: '0.1em' }}>MY BEST CABINET</div>
+                <div style={{ fontSize: 72, fontWeight: 900, color: '#0f172a', marginBottom: 20, lineHeight: 1 }}>最強の内閣、完成。</div>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '40px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '40px', marginTop: 20 }}>
                     {pm && (
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                             <div style={{
-                                width: '180px', height: '180px', borderRadius: '50%', overflow: 'hidden',
-                                border: '6px solid #fbbf24', display: 'flex'
+                                width: '200px', height: '200px', borderRadius: '50%', overflow: 'hidden',
+                                border: '8px solid #f59e0b', display: 'flex',
+                                boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
                             }}>
-                                <img src={pmPhoto} width="180" height="180" style={{ objectFit: 'cover' }} />
+                                {pmPhoto ? (
+                                    <img src={pmPhoto} width="200" height="200" style={{ objectFit: 'cover' }} />
+                                ) : (
+                                    <div style={{ width: '100%', height: '100%', backgroundColor: '#cbd5e1', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 64, color: '#fff' }}>{pm.name[0]}</div>
+                                )}
                             </div>
-                            <div style={{ fontSize: 24, marginTop: 15, fontWeight: 'bold' }}>内閣総理大臣</div>
-                            <div style={{ fontSize: 32, fontWeight: 900 }}>{pm.name}</div>
+                            <div style={{
+                                backgroundColor: '#0f172a', color: 'white', padding: '5px 20px', borderRadius: '20px',
+                                fontSize: 20, marginTop: -20, zIndex: 10, fontWeight: 'bold'
+                            }}>
+                                内閣総理大臣
+                            </div>
+                            <div style={{ fontSize: 36, fontWeight: 800, marginTop: 15, color: '#334155' }}>{pm.name}</div>
                         </div>
                     )}
-                    {/* 官房長官とかも表示したいがスペース次第 */}
+                    {!pm && (
+                        <div style={{ fontSize: 24, color: '#ef4444' }}>総理大臣が未選出です</div>
+                    )}
                 </div>
 
-                <div style={{ fontSize: 24, marginTop: 40, color: '#475569' }}>
-                    他 {Object.keys(cabinet).length - 1} 名の閣僚を選出済み
+                <div style={{ fontSize: 28, marginTop: 30, color: '#64748b', fontWeight: 500 }}>
+                    他 {Object.keys(cabinet).length - (pm ? 1 : 0)} 名の閣僚を選出済み
                 </div>
             </div>
 
-            <div style={{ position: 'absolute', bottom: 30, right: 30, fontSize: 20, color: '#94a3b8' }}>
-                政治家図鑑
+            <div style={{ position: 'absolute', bottom: 40, right: 50, fontSize: 24, fontWeight: 'bold', color: '#94a3b8', display: 'flex', alignItems: 'center' }}>
+                <span style={{ marginRight: 10 }}>🏛️</span> 政治家図鑑
             </div>
         </div>
     ),
@@ -151,11 +165,21 @@ function defaultImage() {
                     justifyContent: 'center',
                     flexDirection: 'column',
                     backgroundColor: 'white',
-                    background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
+                    backgroundImage: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)',
                 }}
             >
-                <div style={{ fontSize: 60, fontWeight: 900, color: '#0f172a' }}>マイベスト内閣</div>
-                <div style={{ fontSize: 30, marginTop: 20, color: '#64748b' }}>あなただけの理想の内閣を作ろう</div>
+                <div style={{
+                    fontSize: 80, fontWeight: 900, color: '#1e3a8a',
+                    marginBottom: 20, letterSpacing: '-0.02em'
+                }}>
+                    マイベスト内閣
+                </div>
+                <div style={{ fontSize: 40, color: '#64748b', fontWeight: 600 }}>
+                    あなただけの最強内閣を組閣しよう
+                </div>
+                <div style={{ position: 'absolute', bottom: 40, fontSize: 24, color: '#94a3b8' }}>
+                    political-arcade.com
+                </div>
             </div>
         ),
         { width: 1200, height: 630 }
