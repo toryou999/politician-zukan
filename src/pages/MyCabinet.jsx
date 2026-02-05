@@ -107,6 +107,8 @@ export default function MyCabinet() {
     const [shareId, setShareId] = useState(null); // シェア用ID
     const [loading, setLoading] = useState(false); // 読み込み中フラグ
 
+    const [loadedFromShare, setLoadedFromShare] = useState(false); // シェア経由でロードしたか
+
     // マウント時に保存された内閣を読み込む
     useEffect(() => {
         const searchParams = new URLSearchParams(window.location.search);
@@ -114,37 +116,42 @@ export default function MyCabinet() {
 
         if (shareIdParam) {
             // シェアされた内閣を読み込む
-            setLoading(true); // MyCabinetコンポーネント内にloading状態を追加する必要あり
+            setLoading(true);
             supabase
                 .from('cabinets')
-                .select('data, share_id') // share_idも取得
+                .select('data, share_id, user_id') // user_idも取得して比較できるようにする
                 .eq('share_id', shareIdParam)
                 .single()
                 .then(({ data, error }) => {
                     if (data && data.data) {
                         setCabinet(data.data);
-                        setShareId(data.share_id); // 読み込んだshare_idをセット
-                        setSaveMessage('シェアされた内閣を読み込みました');
+                        setShareId(data.share_id);
+                        setLoadedFromShare(true);
+                        setSaveMessage('シェアされた内閣を読み込みました（編集して保存すると自分の内閣になります）');
                     } else if (error) {
                         console.error('Error loading shared cabinet:', error);
+                        // エラー時はローカルへフォールバック
+                        loadFromLocal();
                     }
                     setLoading(false);
                 });
         } else {
-            // ローカル保存または自分の最新内閣を読み込む（現状維持+Supabase読み込み）
-            // 簡易的にローカルストレージ優先、なければSupabaseから自分の最新を取得などのロジックが良いが
-            // いったんローカルストレージ互換を維持
-            const savedCabinet = localStorage.getItem('my_saved_cabinet');
-            if (savedCabinet && typeof setCabinet === 'function') {
-                try {
-                    const parsed = JSON.parse(savedCabinet);
-                    setCabinet(parsed);
-                } catch (e) {
-                    console.error('Failed to load cabinet', e);
-                }
+            loadFromLocal();
+        }
+    }, []); // マウント時のみ（再レンダリングで勝手にロードし直さない）
+
+    const loadFromLocal = () => {
+        // ローカル保存または自分の最新内閣を読み込む
+        const savedCabinet = localStorage.getItem('my_saved_cabinet');
+        if (savedCabinet && typeof setCabinet === 'function') {
+            try {
+                const parsed = JSON.parse(savedCabinet);
+                setCabinet(parsed);
+            } catch (e) {
+                console.error('Failed to load cabinet', e);
             }
         }
-    }, [user, setCabinet]); // setCabinetを依存配列に追加
+    }
 
     const handleSave = async () => {
         // ゲストユーザー（匿名）または未ログインの場合は登録を促す
