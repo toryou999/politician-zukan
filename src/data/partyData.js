@@ -140,6 +140,7 @@ export const partyData = [
         description: '穏健な改革と対話。',
         className: 'chudo',
         position: { x: -40, y: 80 },
+        positionReason: '極端な主張を排し、現実的な問題解決と合意形成を重視する中道的な立場です。',
     },
     {
         id: 'sdp',
@@ -150,26 +151,7 @@ export const partyData = [
         description: 'がんこに平和、くらし一番。',
         className: 'sdp',
         position: { x: -60, y: 80 },
-    },
-    {
-        id: 'genzei',
-        name: '減税日本・ゆうこく連合',
-        shortName: '減ゆ',
-        leaderId: 'kawamura-takashi', // 河村たかし
-        color: '#FF6F00',
-        description: '減税こそ最大の経済対策。',
-        className: 'genzei',
-        position: { x: -10, y: -20 },
-    },
-    {
-        id: 'japan-first',
-        name: '日本第一党',
-        shortName: '第一',
-        leaderId: 'sakurai-makoto', // 桜井誠（初代党首・実質的リーダーとして扱う）
-        color: '#b71c1c',
-        description: '日本第一主義を掲げる。',
-        className: 'japan-first',
-        position: { x: 90, y: -90 },
+        positionReason: '護憲と平和主義を掲げ、労働者の権利擁護や社会保障の充実を訴えるリベラル政党です。',
     },
     {
         id: 'independent',

@@ -58,7 +58,7 @@ function PartyPositionMap({ parties }) {
                             transform={`translate(${x}, ${y})`}
                             className="party-plot"
                             onClick={() => setSelectedParty(party)}
-                            style={{ cursor: 'pointer', transition: 'transform 0.2s' }}
+                            style={{ cursor: 'pointer' }}
                         >
                             {/* 選択時は少し大きく、と枠線強調 */}
                             <circle
