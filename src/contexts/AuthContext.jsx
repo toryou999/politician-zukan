@@ -13,36 +13,58 @@ export function AuthProvider({ children }) {
 
     useEffect(() => {
         // Supabaseのセッションチェック
-        supabase.auth.getSession().then(({ data: { session } }) => {
+        const checkSession = async () => {
+            // セッション取得
+            const { data: { session } } = await supabase.auth.getSession();
+
             if (session?.user) {
+                // 既にログイン済み
                 setUser({
                     id: session.user.id,
-                    name: session.user.user_metadata?.name || session.user.email?.split('@')[0] || 'ゲスト',
+                    name: session.user.user_metadata?.name || 'ゲスト',
                     email: session.user.email,
-                    isGuest: false
+                    isGuest: session.user.is_anonymous
                 });
             } else {
-                // Supabaseがない場合やセッションがない場合はローカルストレージチェック(以前の互換性)
-                const storedUser = localStorage.getItem('politician_arcade_user');
-                if (storedUser) {
-                    try {
+                // セッションがない場合、自動的に匿名ログインを試みる（Supabase設定が必要）
+                try {
+                    const { data, error } = await supabase.auth.signInAnonymously();
+                    if (!error && data?.user) {
+                        setUser({
+                            id: data.user.id,
+                            name: 'ゲスト',
+                            email: null,
+                            isGuest: true
+                        });
+                    } else {
+                        // 匿名ログイン失敗（設定OFFの場合など）→ ローカルフォールバック
+                        const storedUser = localStorage.getItem('politician_arcade_user');
+                        if (storedUser) {
+                            setUser(JSON.parse(storedUser));
+                        }
+                    }
+                } catch (e) {
+                    console.log('Anonymous auth failed', e);
+                    // フォールバック
+                    const storedUser = localStorage.getItem('politician_arcade_user');
+                    if (storedUser) {
                         setUser(JSON.parse(storedUser));
-                    } catch (e) {
-                        setUser(null);
                     }
                 }
             }
             setLoading(false);
-        });
+        };
+
+        checkSession();
 
         // 認証状態の変更リスナー
         const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
             if (session?.user) {
                 setUser({
                     id: session.user.id,
-                    name: session.user.user_metadata?.name || session.user.email?.split('@')[0] || 'ゲスト',
+                    name: session.user.user_metadata?.name || 'ゲスト',
                     email: session.user.email,
-                    isGuest: false
+                    isGuest: session.user.is_anonymous
                 });
             } else {
                 setUser(null);
@@ -52,20 +74,14 @@ export function AuthProvider({ children }) {
         return () => subscription.unsubscribe();
     }, []);
 
-    // 擬似ログイン（Supabase未設定時のフォールバック、または簡単ログイン）
+    // 擬似ログイン（今は使わないが互換性のため残す）
     const login = async (userData) => {
-        // 本来はここで supabase.auth.signInWith... を呼ぶ
-        // 今はまだUI上「名前を入力して開始」なので、匿名ログイン的に扱うか、モックのままにする
-        // Supabaseが有効なら匿名ログイン（TODO）
-
-        const dummyUser = {
-            id: 'user_' + Date.now(),
-            name: userData?.name || 'ゲスト総理',
-            isGuest: true,
-            ...userData
-        };
-        setUser(dummyUser);
-        localStorage.setItem('politician_arcade_user', JSON.stringify(dummyUser));
+        // 手動で名前などを設定したい場合用
+        if (user) {
+            // 既に匿名ログイン済みならメタデータを更新するなど（今回は省略）
+            const updatedUser = { ...user, ...userData };
+            setUser(updatedUser);
+        }
     };
 
     const logout = async () => {
