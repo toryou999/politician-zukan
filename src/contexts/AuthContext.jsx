@@ -1,12 +1,4 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
-
-const AuthContext = createContext();
-
-export function useAuth() {
-    return useContext(AuthContext);
-}
-
-import React, { createContext, useState, useEffect, useContext } from 'react';
 import { supabase } from '../lib/supabase';
 
 const AuthContext = createContext();
