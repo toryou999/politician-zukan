@@ -5355,6 +5355,59 @@ export const politicians = [
             { year: '1955年', title: '大阪府大阪市 生まれ' },
         ],
     },
+    // ========== 減税日本・ゆうこく連合 ==========
+    {
+        id: 'ishihama-tetsunobu',
+        name: '石濱 哲信',
+        nameKana: 'いしはま てつのぶ',
+        party: '減税日本・ゆうこく連合',
+        partyType: 'opposition',
+        chamber: 'その他', // 元自衛官・党首
+        constituency: '比例区',
+        wikimediaFile: '', // 画像なし
+        socialLinks: [],
+        position: { x: 0.9, y: -0.8 },
+        supportBills: ['自主防衛', '消費税廃止'],
+        opposeBills: ['外国人参政権', 'グローバリズム'],
+        rivals: [],
+        careers: [
+            { year: '2021年', title: '日本安全対策推進機構 代表' },
+            { year: '2019年', title: '日防隊 創設' },
+            { year: '元', title: '海上自衛隊 哨戒機機長' },
+            { year: '1951年', title: '茨城県 生まれ' },
+        ],
+        books: [
+            { title: 'このままでは、日本人が全滅させられる', asin: '456608935X' },
+        ],
+    },
+    // ========== 日本第一党 ==========
+    {
+        id: 'sakurai-makoto',
+        name: '桜井 誠',
+        nameKana: 'さくらい まこと',
+        party: '日本第一党',
+        partyType: 'opposition',
+        chamber: 'その他', // 党首
+        constituency: '比例区',
+        wikimediaFile: '', // 画像なし
+        socialLinks: [
+            { type: 'twitter', url: 'https://twitter.com/Doronpa01' },
+            { type: 'website', url: 'https://japan-first.net/' },
+        ],
+        position: { x: 0.95, y: -0.95 },
+        supportBills: ['自主憲法制定', '国軍創設', 'パチンコ廃止'],
+        opposeBills: ['外国人生活保護', '移民政策', '外国人参政権'],
+        rivals: [],
+        careers: [
+            { year: '2016年', title: '日本第一党 結党・初代党首' },
+            { year: '2006年', title: '在日特権を許さない市民の会 会長' },
+            { year: '1972年', title: '福岡県 生まれ' },
+        ],
+        books: [
+            { title: '日本第一党宣言', asin: 'B071V83N31' },
+            { title: '大嫌韓時代', asin: 'B00N675X6W' },
+        ],
+    },
 ];
 
 // IDで政治家を取得
