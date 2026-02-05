@@ -13,7 +13,9 @@ import Privacy from './pages/Privacy'
 import Footer from './components/Footer'
 import Header from './components/Header' // 新規追加
 import Login from './pages/Login'
-import Signup from './pages/Signup' // 新規追加
+import Signup from './pages/Signup'
+import ForgotPassword from './pages/ForgotPassword' // 新規追加
+import UpdatePassword from './pages/UpdatePassword' // 新規追加
 import MyPage from './pages/MyPage'
 import { AuthProvider } from './contexts/AuthContext'
 
@@ -32,7 +34,9 @@ function App() {
             <Route path="/terms" element={<Terms />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} /> {/* 新規追加 */}
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} /> {/* 新規追加 */}
+            <Route path="/update-password" element={<UpdatePassword />} /> {/* 新規追加 */}
             <Route path="/mypage" element={<MyPage />} />
           </Routes>
           <CabinetFab />

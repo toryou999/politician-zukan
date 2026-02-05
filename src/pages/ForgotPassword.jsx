@@ -2,45 +2,38 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
-export default function Login() {
+export default function ForgotPassword() {
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [message, setMessage] = useState('');
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
-    const { signIn } = useAuth();
-    const navigate = useNavigate();
+    const { resetPassword } = useAuth();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            setMessage('');
             setError('');
             setLoading(true);
-            await signIn(email, password);
-            navigate('/my-cabinet'); // ログイン後はマイ内閣へ
+            await resetPassword(email);
+            setMessage('パスワードリセット用のメールを送信しました。メール内のリンクを確認してください。');
         } catch (e) {
-            setError('ログインに失敗しました。メールアドレスとパスワードを確認してください。（エラー: ' + e.message + '）');
+            setError('リセットメールの送信に失敗しました: ' + e.message);
         }
         setLoading(false);
     };
 
     return (
         <div style={{ padding: '20px', maxWidth: '400px', margin: '0 auto', textAlign: 'center' }}>
-            <h2 style={{ marginBottom: '20px', color: '#1a1a2e' }}>ログイン</h2>
+            <h2 style={{ marginBottom: '20px', color: '#1a1a2e' }}>パスワードをお忘れの方</h2>
             {error && <div style={{ color: 'red', marginBottom: '10px', fontSize: '14px' }}>{error}</div>}
+            {message && <div style={{ color: 'green', marginBottom: '10px', fontSize: '14px', fontWeight: 'bold' }}>{message}</div>}
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
                 <input
                     type="email"
-                    placeholder="メールアドレス"
+                    placeholder="登録メールアドレス"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    required
-                    style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ddd', fontSize: '16px' }}
-                />
-                <input
-                    type="password"
-                    placeholder="パスワード"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
                     required
                     style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ddd', fontSize: '16px' }}
                 />
@@ -51,24 +44,18 @@ export default function Login() {
                         padding: '12px',
                         borderRadius: '5px',
                         border: 'none',
-                        backgroundColor: '#2196F3',
+                        backgroundColor: '#FF5722',
                         color: 'white',
                         fontSize: '16px',
                         cursor: loading ? 'not-allowed' : 'pointer',
                         opacity: loading ? 0.7 : 1
                     }}
                 >
-                    {loading ? 'ログイン中...' : 'ログイン'}
+                    {loading ? '送信中...' : 'リセットメールを送信'}
                 </button>
             </form>
             <div style={{ marginTop: '20px', fontSize: '14px' }}>
-                アカウントをお持ちでないですか？ <Link to="/signup" style={{ color: '#2196F3' }}>新規登録</Link>
-            </div>
-            <div style={{ marginTop: '10px', fontSize: '14px' }}>
-                <Link to="/forgot-password" style={{ color: '#666' }}>パスワードをお忘れの方</Link>
-            </div>
-            <div style={{ marginTop: '10px', fontSize: '14px' }}>
-                <Link to="/" style={{ color: '#666' }}>トップページに戻る</Link>
+                <Link to="/login" style={{ color: '#2196F3' }}>ログインページに戻る</Link>
             </div>
         </div>
     );
